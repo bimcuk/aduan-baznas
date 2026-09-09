@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <base target="_top">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <title>Pengaduan BAZNAS Banyumas</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7f5;
+      color: #222;
+    }
+
+    .header {
+      background: #259148;
+      color: white;
+      padding: 24px 20px;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .header p {
+      margin: 7px 0 0;
+      opacity: .9;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .nav button {
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      background: white;
+      color: #259148;
+      font-weight: bold;
+    }
+
+    .nav button.active {
+      background: #259148;
+      color: white;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 3px 15px rgba(0,0,0,.06);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 42px 12px 14px;
+      border: 1px solid #d9d9d9;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #fff;
+      color: #222;
+      min-height: 44px;
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      background-image:
+        linear-gradient(45deg, transparent 50%, #259148 50%),
+        linear-gradient(135deg, #259148 50%, transparent 50%);
+
+      background-position:
+        calc(100% - 18px) 19px,
+        calc(100% - 13px) 19px;
+
+      background-size:
+        5px 5px,
+        5px 5px;
+
+      background-repeat: no-repeat;
+
+      cursor: pointer;
+    }
+
+    select:focus,
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #259148;
+      box-shadow: 0 0 0 3px rgba(37, 145, 72, 0.1);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .btn {
+      width: 100%;
+      border: none;
+      background: #259148;
+      color: white;
+      padding: 13px;
+      border-radius: 8px;
+      margin-top: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      opacity: .9;
+    }
+
+    .btn:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .success {
+      display: none;
+      background: #e9f7ed;
+      color: #176b35;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+
+    .error {
+      display: none;
+      background: #fdecec;
+      color: #a52a2a;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+
+    .ticket {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .stat {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 24px;
+      font-weight: bold;
+      color: #259148;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #777;
+      margin-top: 5px;
+    }
+
+    .complaint-list {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    .complaint {
+      border: 1px solid #eee;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .complaint-id {
+      font-weight: bold;
+      color: #259148;
+    }
+
+    .complaint-title {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .complaint-meta {
+      font-size: 12px;
+      color: #777;
+      margin-top: 5px;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 9px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      background: #eee;
+    }
+
+    .status.baru {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .status.diverifikasi {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .status.diproses {
+      background: #fff3cd;
+      color: #92400e;
+    }
+
+    .status.selesai {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .status.ditutup {
+      background: #e5e7eb;
+      color: #374151;
+    }
+
+    .detail {
+      display: none;
+      margin-top: 20px;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+
+    .detail-box {
+      background: #f7faf8;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    .timeline {
+      margin-top: 15px;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background: #259148;
+      border-radius: 50%;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+    }
+
+    @media(max-width: 800px) {
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="header">
+
+    <div class="header-inner">
+
+      <h1>Pengaduan BAZNAS Banyumas</h1>
+
+      <p>
+        Sampaikan pengaduan, kritik, dan masukan Anda
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="container">
+
+    <div class="nav">
+
+      <button
+        id="btnForm"
+        class="active"
+        onclick="showPage('form')">
+
+        📝 Buat Pengaduan
+
+      </button>
+
+      <button
+        id="btnCek"
+        onclick="showPage('cek')">
+
+        🔎 Cek Pengaduan
+
+      </button>
+
+    </div>
+
+
+    <!-- ================= FORM ================= -->
+
+    <div id="pageForm">
+
+      <div class="card">
+
+        <h2>Form Pengaduan</h2>
+
+        <form id="complaintForm">
+
+          <label>Nama Pelapor *</label>
+
+          <input
+            id="nama"
+            required>
+
+
+          <label>No. WhatsApp *</label>
+
+          <input
+            id="noWa"
+            type="tel"
+            required>
+
+
+          <label>Email</label>
+
+          <input
+            id="email"
+            type="email">
+
+
+          <label>Status Pelapor</label>
+
+          <select id="statusPelapor">
+
+            <option value="">Pilih</option>
+
+            <option>Muzaki</option>
+
+            <option>Mustahik</option>
+
+            <option>UPZ</option>
+
+            <option>Amil</option>
+
+            <option>Masyarakat Umum</option>
+
+            <option>Lainnya</option>
+
+          </select>
+
+
+          <label>Kategori *</label>
+
+          <select
+            id="kategori"
+            onchange="loadSubkategori()"
+            required>
+
+            <option value="">Pilih kategori</option>
+
+            <option>Pelayanan</option>
+
+            <option>Penyaluran</option>
+
+            <option>Penghimpunan</option>
+
+            <option>Program</option>
+
+            <option>UPZ</option>
+
+            <option>SDM/Amil</option>
+
+            <option>Keuangan</option>
+
+            <option>IT/Digital</option>
+
+            <option>Lainnya</option>
+
+          </select>
+
+
+          <label>Subkategori</label>
+
+          <select id="subkategori">
+
+            <option value="">Pilih subkategori</option>
+
+          </select>
+
+
+          <label>Unit Terkait</label>
+
+          <input id="unitTerkait">
+
+
+          <label>Tanggal Kejadian</label>
+
+          <input
+            id="tanggalKejadian"
+            type="date">
+
+
+          <label>Judul Pengaduan *</label>
+
+          <input
+            id="judul"
+            required>
+
+
+          <label>Uraian / Kronologi *</label>
+
+          <textarea
+            id="uraian"
+            required></textarea>
+
+
+          <label>Link Bukti</label>
+
+          <input
+            id="bukti"
+            placeholder="Google Drive / link lainnya">
+
+
+          <button
+            type="submit"
+            class="btn"
+            id="submitBtn">
+
+            Kirim Pengaduan
+
+          </button>
+
+        </form>
+
+
+        <div
+          id="success"
+          class="success">
+
+          <div>✅ Pengaduan berhasil dikirim.</div>
+
+          <div>Nomor tiket Anda:</div>
+
+          <div
+            id="ticket"
+            class="ticket">
+          </div>
+
+          <div style="margin-top:10px">
+
+            Simpan nomor tiket ini untuk mengecek
+            perkembangan pengaduan Anda.
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="error"
+          class="error">
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================= CEK ================= -->
+
+    <div
+      id="pageCek"
+      class="hidden">
+
+
+      <div class="grid">
+
+
+        <!-- LEFT -->
+
+        <div>
+
+          <div class="card">
+
+            <h2>Cek Status Pengaduan</h2>
+
+            <p>
+              Masukkan nomor tiket pengaduan Anda.
+            </p>
+
+            <input
+              id="searchId"
+              placeholder="Contoh: ADU-20260909-001">
+
+            <button
+              class="btn"
+              onclick="checkComplaint()">
+
+              Cek Status
+
+            </button>
+
+
+            <div
+              id="detail"
+              class="detail">
+
+              <h3 id="detailTitle"></h3>
+
+              <div class="detail-box">
+
+                <b>Kategori</b>
+
+                <div id="detailKategori"></div>
+
+                <br>
+
+                <b>Status</b>
+
+                <div id="detailStatus"></div>
+
+                <br>
+
+                <b>Tindak Lanjut</b>
+
+                <div id="detailTindakLanjut"></div>
+
+              </div>
+
+
+              <div class="timeline">
+
+                <h3>Perkembangan</h3>
+
+                <div id="timeline"></div>
+
+              </div>
+
+            </div>
+
+
+            <div
+              id="checkError"
+              class="error">
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div>
+
+          <div class="stats">
+
+            <div class="stat">
+
+              <div
+                class="stat-number"
+                id="total">
+                -
+              </div>
+
+              <div class="stat-label">
+                Total Aduan
+              </div>
+
+            </div>
+
+
+            <div class="stat">
+
+              <div
+                class="stat-number"
+                id="diproses">
+                -
+              </div>
+
+              <div class="stat-label">
+                Diproses
+              </div>
+
+            </div>
+
+
+            <div class="stat">
+
+              <div
+                class="stat-number"
+                id="selesai">
+                -
+              </div>
+
+              <div class="stat-label">
+                Selesai
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="card">
+
+            <h2>
+              Daftar Pengaduan
+            </h2>
+
+            <p style="font-size:13px;color:#777">
+
+              Daftar pengaduan yang dapat
+              ditampilkan secara publik.
+
+            </p>
+
+
+            <div
+              id="complaintList"
+              class="complaint-list">
+
+              <div class="loading">
+                Memuat data...
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+<script>
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function showPage(page) {
+
+  const form = document.getElementById('pageForm');
+  const cek = document.getElementById('pageCek');
+
+  const btnForm = document.getElementById('btnForm');
+  const btnCek = document.getElementById('btnCek');
+
+
+  if (page === 'form') {
+
+    form.classList.remove('hidden');
+
+    cek.classList.add('hidden');
+
+    btnForm.classList.add('active');
+
+    btnCek.classList.remove('active');
+
+  }
+
+
+  if (page === 'cek') {
+
+    form.classList.add('hidden');
+
+    cek.classList.remove('hidden');
+
+    btnForm.classList.remove('active');
+
+    btnCek.classList.add('active');
+
+    loadPublicData();
+
+  }
+
+}
+
+
+/* =========================================================
+   SUBKATEGORI
+========================================================= */
+
+const subkategori = {
+
+  'Pelayanan': [
+    'Pelayanan Amil',
+    'Informasi',
+    'Administrasi',
+    'Lainnya'
+  ],
+
+  'Penyaluran': [
+    'Bantuan',
+    'Mustahik',
+    'Distribusi',
+    'Lainnya'
+  ],
+
+  'Penghimpunan': [
+    'Zakat',
+    'Infak/Sedekah',
+    'Muzaki',
+    'Pembayaran',
+    'Lainnya'
+  ],
+
+  'Program': [
+    'Pelaksanaan Program',
+    'Penerima Manfaat',
+    'Kegiatan',
+    'Lainnya'
+  ],
+
+  'UPZ': [
+    'Layanan UPZ',
+    'Administrasi UPZ',
+    'Pelaporan UPZ',
+    'Lainnya'
+  ],
+
+  'SDM/Amil': [
+    'Pelayanan Amil',
+    'Etika',
+    'Kinerja',
+    'Lainnya'
+  ],
+
+  'Keuangan': [
+    'Transaksi',
+    'Pembayaran',
+    'Laporan',
+    'Lainnya'
+  ],
+
+  'IT/Digital': [
+    'Website',
+    'Aplikasi',
+    'Sistem Digital',
+    'Lainnya'
+  ],
+
+  'Lainnya': [
+    'Lainnya'
+  ]
+
+};
+
+
+function loadSubkategori() {
+
+  const kategori =
+    document.getElementById('kategori').value;
+
+  const select =
+    document.getElementById('subkategori');
+
+  select.innerHTML =
+    '<option value="">Pilih subkategori</option>';
+
+
+  if (!subkategori[kategori]) return;
+
+
+  subkategori[kategori].forEach(function(item) {
+
+    const option =
+      document.createElement('option');
+
+    option.value = item;
+
+    option.textContent = item;
+
+    select.appendChild(option);
+
+  });
+
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+document
+  .getElementById('complaintForm')
+  .addEventListener('submit', function(e) {
+
+    e.preventDefault();
+
+
+    const btn =
+      document.getElementById('submitBtn');
+
+    btn.disabled = true;
+
+    btn.textContent =
+      'Mengirim...';
+
+
+    const data = {
+
+      nama:
+        document.getElementById('nama').value,
+
+      noWa:
+        document.getElementById('noWa').value,
+
+      email:
+        document.getElementById('email').value,
+
+      statusPelapor:
+        document.getElementById('statusPelapor').value,
+
+      kategori:
+        document.getElementById('kategori').value,
+
+      subkategori:
+        document.getElementById('subkategori').value,
+
+      unitTerkait:
+        document.getElementById('unitTerkait').value,
+
+      tanggalKejadian:
+        document.getElementById('tanggalKejadian').value,
+
+      judul:
+        document.getElementById('judul').value,
+
+      uraian:
+        document.getElementById('uraian').value,
+
+      bukti:
+        document.getElementById('bukti').value
+
+    };
+
+
+    google.script.run
+
+      .withSuccessHandler(function(result) {
+
+        btn.disabled = false;
+
+        btn.textContent =
+          'Kirim Pengaduan';
+
+
+        document.getElementById('success')
+          .style.display = 'block';
+
+
+        document.getElementById('ticket')
+          .textContent = result.id;
+
+
+        document.getElementById('error')
+          .style.display = 'none';
+
+
+        document.getElementById('complaintForm')
+          .reset();
+
+
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+
+      })
+
+
+      .withFailureHandler(function(error) {
+
+        btn.disabled = false;
+
+        btn.textContent =
+          'Kirim Pengaduan';
+
+
+        const el =
+          document.getElementById('error');
+
+        el.textContent =
+          'Gagal mengirim: ' +
+          error.message;
+
+        el.style.display = 'block';
+
+      })
+
+
+      .submitComplaint(data);
+
+  });
+
+
+/* =========================================================
+   CEK ADUAN
+========================================================= */
+
+function checkComplaint() {
+
+  const id =
+    document.getElementById('searchId')
+      .value
+      .trim();
+
+
+  const error =
+    document.getElementById('checkError');
+
+  const detail =
+    document.getElementById('detail');
+
+
+  error.style.display = 'none';
+
+  detail.style.display = 'none';
+
+
+  if (!id) {
+
+    error.textContent =
+      'Masukkan nomor tiket terlebih dahulu.';
+
+    error.style.display = 'block';
+
+    return;
+
+  }
+
+
+  google.script.run
+
+    .withSuccessHandler(function(result) {
+
+      if (!result.success) {
+
+        error.textContent =
+          result.message;
+
+        error.style.display =
+          'block';
+
+        return;
+
+      }
+
+
+      detail.style.display =
+        'block';
+
+
+      document.getElementById('detailTitle')
+        .textContent =
+        result.id +
+        ' — ' +
+        result.judul;
+
+
+      document.getElementById('detailKategori')
+        .textContent =
+        result.kategori;
+
+
+      document.getElementById('detailStatus')
+        .innerHTML =
+        createStatusBadge(result.status);
+
+
+      document.getElementById('detailTindakLanjut')
+        .textContent =
+        result.tindakLanjut ||
+        'Belum ada informasi tindak lanjut.';
+
+
+      createTimeline(result);
+
+    })
+
+
+    .withFailureHandler(function(err) {
+
+      error.textContent =
+        err.message;
+
+      error.style.display =
+        'block';
+
+    })
+
+
+    .getComplaintById(id);
+
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+function createTimeline(data) {
+
+  const timeline =
+    document.getElementById('timeline');
+
+
+  let html = '';
+
+
+  html += timelineItem(
+    'Pengaduan diterima',
+    data.timestamp
+  );
+
+
+  if (
+    data.status === 'Diverifikasi' ||
+    data.status === 'Diproses' ||
+    data.status === 'Menunggu Informasi' ||
+    data.status === 'Selesai' ||
+    data.status === 'Ditutup'
+  ) {
+
+    html += timelineItem(
+      'Pengaduan diverifikasi',
+      data.tanggalVerifikasi
+    );
+
+  }
+
+
+  if (
+    data.status === 'Diproses' ||
+    data.status === 'Menunggu Informasi' ||
+    data.status === 'Selesai' ||
+    data.status === 'Ditutup'
+  ) {
+
+    html += timelineItem(
+      'Pengaduan sedang ditindaklanjuti',
+      ''
+    );
+
+  }
+
+
+  if (
+    data.status === 'Selesai' ||
+    data.status === 'Ditutup'
+  ) {
+
+    html += timelineItem(
+      'Pengaduan selesai',
+      data.tanggalSelesai
+    );
+
+  }
+
+
+  timeline.innerHTML = html;
+
+}
+
+
+function timelineItem(title, date) {
+
+  return `
+
+    <div class="timeline-item">
+
+      <div class="dot"></div>
+
+      <div>
+
+        <b>${escapeHtml(title)}</b>
+
+        <div style="font-size:12px;color:#777">
+
+          ${escapeHtml(date || '')}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================================================
+   PUBLIC DATA
+========================================================= */
+
+function loadPublicData() {
+
+  google.script.run
+
+    .withSuccessHandler(function(stats) {
+
+      document.getElementById('total')
+        .textContent =
+        stats.total;
+
+
+      document.getElementById('diproses')
+        .textContent =
+        stats.diproses;
+
+
+      document.getElementById('selesai')
+        .textContent =
+        stats.selesai;
+
+    })
+
+    .getPublicStats();
+
+
+  google.script.run
+
+    .withSuccessHandler(function(data) {
+
+      renderComplaintList(data);
+
+    })
+
+    .withFailureHandler(function(error) {
+
+      document.getElementById(
+        'complaintList'
+      ).innerHTML =
+
+        '<div class="error" style="display:block">' +
+        escapeHtml(error.message) +
+        '</div>';
+
+    })
+
+    .getPublicComplaints();
+
+}
+
+
+/* =========================================================
+   RENDER LIST
+========================================================= */
+
+function renderComplaintList(data) {
+
+  const container =
+    document.getElementById('complaintList');
+
+
+  if (!data.length) {
+
+    container.innerHTML =
+      '<div class="loading">Belum ada pengaduan.</div>';
+
+    return;
+
+  }
+
+
+  let html = '';
+
+
+  data.forEach(function(item) {
+
+    html += `
+
+      <div class="complaint">
+
+        <div class="complaint-id">
+
+          ${escapeHtml(item.id)}
+
+        </div>
+
+
+        <div class="complaint-title">
+
+          ${escapeHtml(item.judul)}
+
+        </div>
+
+
+        <div class="complaint-meta">
+
+          ${escapeHtml(item.tanggal)}
+          ·
+          ${escapeHtml(item.kategori)}
+
+        </div>
+
+
+        ${createStatusBadge(item.status)}
+
+
+        ${
+          item.tindakLanjut
+          ? `
+            <div style="
+              margin-top:10px;
+              font-size:13px;
+            ">
+
+              <b>Tindak lanjut:</b><br>
+
+              ${escapeHtml(item.tindakLanjut)}
+
+            </div>
+          `
+          : ''
+        }
+
+      </div>
+
+    `;
+
+  });
+
+
+  container.innerHTML = html;
+
+}
+
+
+/* =========================================================
+   STATUS BADGE
+========================================================= */
+
+function createStatusBadge(status) {
+
+  let cls =
+    String(status)
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z-]/g, '');
+
+
+  return `
+
+    <span class="status ${cls}">
+
+      ${escapeHtml(status)}
+
+    </span>
+
+  `;
+
+}
+
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+function escapeHtml(text) {
+
+  if (text === null ||
+      text === undefined) {
+
+    return '';
+
+  }
+
+
+  return String(text)
+
+    .replace(/&/g, '&amp;')
+
+    .replace(/</g, '&lt;')
+
+    .replace(/>/g, '&gt;')
+
+    .replace(/"/g, '&quot;')
+
+    .replace(/'/g, '&#039;');
+
+}
+
+
+/* =========================================================
+   AUTO REFRESH
+========================================================= */
+
+/*
+  Setiap 30 detik website mengambil
+  data terbaru dari Spreadsheet.
+*/
+
+setInterval(function() {
+
+  const cekPage =
+    document.getElementById('pageCek');
+
+  if (!cekPage.classList.contains('hidden')) {
+
+    loadPublicData();
+
+  }
+
+}, 30000);
+
+
+</script>
+
+</body>
+
+</html>
