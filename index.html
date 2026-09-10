@@ -982,7 +982,7 @@
 
     <!-- =====================================================
          HALAMAN CEK PENGADUAN
-         STATISTIK + CEK + LIST ADA DI SINI
+         STATISTIK + CEK + LIST
     ====================================================== -->
 
     <div
@@ -2136,8 +2136,6 @@
 
     }
 
-
-    // DATA STATISTIK ADA DI result.data
     const stats =
       result.data || {};
 
@@ -2351,8 +2349,6 @@
 
     /* =====================================================
        INITIAL LOAD
-       Statistik/list TIDAK DILOAD DI HALAMAN FORM.
-       Baru di-load ketika buka CEK PENGADUAN.
     ====================================================== */
 
     document.addEventListener(
@@ -2367,7 +2363,6 @@
 
     /* =====================================================
        AUTO REFRESH
-       Hanya refresh kalau halaman cek sedang aktif.
     ====================================================== */
 
     setInterval(
