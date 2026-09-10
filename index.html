@@ -2103,76 +2103,85 @@
        LOAD STATISTICS
     ====================================================== */
 
-    async function loadStats() {
+   async function loadStats() {
 
-      try {
+  try {
 
-        const response =
-          await fetch(
-            API_URL +
-            '?action=stats'
-          );
-
-
-        if (!response.ok) {
-          return;
-        }
+    const response =
+      await fetch(
+        API_URL +
+        '?action=stats'
+      );
 
 
-        const result =
-          await response.json();
+    if (!response.ok) {
 
-
-        if (!result.success) {
-          return;
-        }
-
-
-        const stats =
-          result.stats ||
-          result;
-
-
-        document.getElementById(
-          'statBaru'
-        ).textContent =
-          stats.baru || 0;
-
-
-        document.getElementById(
-          'statVerifikasi'
-        ).textContent =
-          stats.diverifikasi || 0;
-
-
-        document.getElementById(
-          'statProses'
-        ).textContent =
-          stats.diproses || 0;
-
-
-        document.getElementById(
-          'statMenunggu'
-        ).textContent =
-          stats['menunggu'] || 0;
-
-
-        document.getElementById(
-          'statSelesai'
-        ).textContent =
-          stats.selesai || 0;
-
-
-      } catch (error) {
-
-        console.error(
-          'Stats error:',
-          error
-        );
-
-      }
+      throw new Error(
+        'Gagal memuat statistik.'
+      );
 
     }
+
+
+    const result =
+      await response.json();
+
+
+    if (!result.success) {
+
+      throw new Error(
+        result.message ||
+        'Gagal memuat statistik.'
+      );
+
+    }
+
+
+    // DATA STATISTIK ADA DI result.data
+    const stats =
+      result.data || {};
+
+
+    document.getElementById(
+      'statBaru'
+    ).textContent =
+      stats.baru || 0;
+
+
+    document.getElementById(
+      'statVerifikasi'
+    ).textContent =
+      stats.diverifikasi || 0;
+
+
+    document.getElementById(
+      'statProses'
+    ).textContent =
+      stats.diproses || 0;
+
+
+    document.getElementById(
+      'statMenunggu'
+    ).textContent =
+      stats.menunggu || 0;
+
+
+    document.getElementById(
+      'statSelesai'
+    ).textContent =
+      stats.selesai || 0;
+
+
+  } catch (error) {
+
+    console.error(
+      'Stats error:',
+      error
+    );
+
+  }
+
+}
 
 
     /* =====================================================
