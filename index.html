@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -46,9 +47,27 @@
       background: #259148;
       color: white;
       border-radius: 18px;
-      padding: 26px 28px;
+      padding: 22px 26px;
       margin-bottom: 18px;
       box-shadow: 0 8px 25px rgba(37, 145, 72, .15);
+
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .header-logo {
+      width: 68px;
+      height: 68px;
+      object-fit: contain;
+      flex-shrink: 0;
+      background: rgba(255,255,255,.08);
+      border-radius: 12px;
+      padding: 5px;
+    }
+
+    .header-content {
+      min-width: 0;
     }
 
     .header-title {
@@ -177,15 +196,15 @@
     }
 
     select {
-      cursor:pointer;
-      appearance:none;
-      -webkit-appearance:none;
-      -moz-appearance:none;
-      padding-right:42px;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-      background-repeat:no-repeat;
-      background-position:right 14px center;
-      background-size:14px;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      padding-right: 42px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 14px;
     }
 
     textarea {
@@ -580,16 +599,22 @@
       }
 
       .header {
-        padding: 21px;
-        border-radius: 15px;
+        padding: 18px;
+        gap: 13px;
+      }
+
+      .header-logo {
+        width: 52px;
+        height: 52px;
       }
 
       .header-title {
-        font-size: 20px;
+        font-size: 18px;
       }
 
       .header-subtitle {
-        font-size: 11px;
+        font-size: 10px;
+        line-height: 1.6;
       }
 
       .nav {
@@ -663,27 +688,32 @@
 
   <div class="container">
 
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
+    <!-- HEADER -->
 
     <div class="header">
 
-      <div class="header-title">
-        Pengaduan BAZNAS Banyumas
-      </div>
+      <img
+        src="https://drive.google.com/thumbnail?id=1l-i0eUYgRRoDTXsVV30qksgcFHaw_qcW&sz=w1000"
+        class="header-logo"
+        alt="Logo BAZNAS Banyumas">
 
-      <div class="header-subtitle">
-        Sampaikan pengaduan, aspirasi, atau laporan Anda kepada
-        BAZNAS Kabupaten Banyumas.
+      <div class="header-content">
+
+        <div class="header-title">
+          Pengaduan BAZNAS Banyumas
+        </div>
+
+        <div class="header-subtitle">
+          Sampaikan pengaduan, aspirasi, atau laporan Anda kepada
+          BAZNAS Kabupaten Banyumas.
+        </div>
+
       </div>
 
     </div>
 
 
-    <!-- =====================================================
-         NAVIGATION
-    ====================================================== -->
+    <!-- NAVIGATION -->
 
     <div class="nav">
 
@@ -696,7 +726,6 @@
 
       </button>
 
-
       <button
         id="btnCheck"
         onclick="showPage('check')">
@@ -708,10 +737,7 @@
     </div>
 
 
-    <!-- =====================================================
-         HALAMAN BUAT PENGADUAN
-         HANYA FORM
-    ====================================================== -->
+    <!-- HALAMAN BUAT PENGADUAN -->
 
     <div id="pageForm">
 
@@ -726,18 +752,11 @@
           ditindaklanjuti oleh BAZNAS Banyumas.
         </div>
 
-
-        <div
-          id="formAlert"
-          class="alert">
-        </div>
-
+        <div id="formAlert" class="alert"></div>
 
         <form id="complaintForm">
 
           <div class="form-grid">
-
-            <!-- NAMA -->
 
             <div class="form-group">
 
@@ -755,8 +774,6 @@
 
             </div>
 
-
-            <!-- WHATSAPP -->
 
             <div class="form-group">
 
@@ -780,8 +797,6 @@
             </div>
 
 
-            <!-- EMAIL -->
-
             <div class="form-group">
 
               <label>
@@ -797,8 +812,6 @@
 
             </div>
 
-
-            <!-- STATUS PELAPOR -->
 
             <div class="form-group">
 
@@ -844,8 +857,6 @@
             </div>
 
 
-            <!-- JENIS PENGADUAN -->
-
             <div class="form-group">
 
               <label>
@@ -878,8 +889,6 @@
             </div>
 
 
-            <!-- TANGGAL KEJADIAN -->
-
             <div class="form-group">
 
               <label>
@@ -893,8 +902,6 @@
 
             </div>
 
-
-            <!-- URAIAN -->
 
             <div class="form-group full">
 
@@ -910,8 +917,6 @@
 
             </div>
 
-
-            <!-- BUKTI -->
 
             <div class="form-group full">
 
@@ -940,8 +945,6 @@
           </div>
 
 
-          <!-- ACTION -->
-
           <div class="form-actions">
 
             <button
@@ -951,7 +954,6 @@
               Reset
 
             </button>
-
 
             <button
               type="submit"
@@ -980,16 +982,11 @@
     </div>
 
 
-    <!-- =====================================================
-         HALAMAN CEK PENGADUAN
-         STATISTIK + CEK + LIST
-    ====================================================== -->
+    <!-- HALAMAN CEK PENGADUAN -->
 
     <div
       id="pageCheck"
       style="display:none;">
-
-      <!-- CEK TIKET -->
 
       <div class="card">
 
@@ -1002,12 +999,7 @@
           perkembangan laporan Anda.
         </div>
 
-
-        <div
-          id="checkAlert"
-          class="alert">
-        </div>
-
+        <div id="checkAlert" class="alert"></div>
 
         <div class="check-box">
 
@@ -1026,7 +1018,6 @@
 
         </div>
 
-
         <div
           id="checkLoading"
           class="loading">
@@ -1035,8 +1026,6 @@
 
         </div>
 
-
-        <!-- DETAIL -->
 
         <div
           id="detailBox"
@@ -1207,9 +1196,7 @@
       </div>
 
 
-      <!-- =================================================
-           STATISTIK
-      ================================================== -->
+      <!-- STATISTIK -->
 
       <div class="card">
 
@@ -1220,7 +1207,6 @@
         <div class="card-desc">
           Informasi statistik pengaduan secara keseluruhan.
         </div>
-
 
         <div class="stats-grid">
 
@@ -1313,9 +1299,7 @@
       </div>
 
 
-      <!-- =================================================
-           PENGADUAN TERBARU
-      ================================================== -->
+      <!-- PENGADUAN TERBARU -->
 
       <div class="card">
 
@@ -1326,7 +1310,6 @@
         <div class="card-desc">
           Daftar pengaduan yang masuk secara umum.
         </div>
-
 
         <div
           id="complaintList"
@@ -1357,9 +1340,7 @@
   </div>
 
 
-  <!-- =====================================================
-       SUCCESS MODAL
-  ====================================================== -->
+  <!-- SUCCESS MODAL -->
 
   <div
     id="successModal"
@@ -1371,17 +1352,14 @@
         ✓
       </div>
 
-
       <div class="modal-title">
         Pengaduan Berhasil Dikirim
       </div>
-
 
       <div class="modal-text">
         Pengaduan Anda telah berhasil diterima
         oleh BAZNAS Banyumas.
       </div>
-
 
       <div class="modal-ticket">
 
@@ -1399,12 +1377,10 @@
 
       </div>
 
-
       <div class="modal-text">
         Simpan nomor tiket ini untuk mengecek
         perkembangan pengaduan Anda.
       </div>
-
 
       <button
         class="modal-btn"
@@ -1538,7 +1514,6 @@
         'modalTicket'
       ).textContent = ticket || '-';
 
-
       document.getElementById(
         'successModal'
       ).classList.add('show');
@@ -1583,22 +1558,18 @@
           const reader =
             new FileReader();
 
-
           reader.onload =
             function() {
 
               const result =
                 reader.result;
 
-
               const base64 =
                 result.split(',')[1];
-
 
               resolve(base64);
 
             };
-
 
           reader.onerror =
             function(error) {
@@ -1606,7 +1577,6 @@
               reject(error);
 
             };
-
 
           reader.readAsDataURL(file);
 
@@ -1630,18 +1600,15 @@
 
         hideAlert('formAlert');
 
-
         const submitBtn =
           document.getElementById(
             'submitBtn'
           );
 
-
         const loading =
           document.getElementById(
             'submitLoading'
           );
-
 
         submitBtn.disabled = true;
 
@@ -1657,7 +1624,6 @@
 
           const fileInput =
             document.getElementById('file');
-
 
           let file = null;
 
@@ -2103,83 +2069,84 @@
        LOAD STATISTICS
     ====================================================== */
 
-   async function loadStats() {
+    async function loadStats() {
 
-  try {
+      try {
 
-    const response =
-      await fetch(
-        API_URL +
-        '?action=stats'
-      );
+        const response =
+          await fetch(
+            API_URL +
+            '?action=stats'
+          );
 
 
-    if (!response.ok) {
+        if (!response.ok) {
 
-      throw new Error(
-        'Gagal memuat statistik.'
-      );
+          throw new Error(
+            'Gagal memuat statistik.'
+          );
+
+        }
+
+
+        const result =
+          await response.json();
+
+
+        if (!result.success) {
+
+          throw new Error(
+            result.message ||
+            'Gagal memuat statistik.'
+          );
+
+        }
+
+
+        const stats =
+          result.data || {};
+
+
+        document.getElementById(
+          'statBaru'
+        ).textContent =
+          stats.baru || 0;
+
+
+        document.getElementById(
+          'statVerifikasi'
+        ).textContent =
+          stats.diverifikasi || 0;
+
+
+        document.getElementById(
+          'statProses'
+        ).textContent =
+          stats.diproses || 0;
+
+
+        document.getElementById(
+          'statMenunggu'
+        ).textContent =
+          stats.menunggu || 0;
+
+
+        document.getElementById(
+          'statSelesai'
+        ).textContent =
+          stats.selesai || 0;
+
+
+      } catch (error) {
+
+        console.error(
+          'Stats error:',
+          error
+        );
+
+      }
 
     }
-
-
-    const result =
-      await response.json();
-
-
-    if (!result.success) {
-
-      throw new Error(
-        result.message ||
-        'Gagal memuat statistik.'
-      );
-
-    }
-
-    const stats =
-      result.data || {};
-
-
-    document.getElementById(
-      'statBaru'
-    ).textContent =
-      stats.baru || 0;
-
-
-    document.getElementById(
-      'statVerifikasi'
-    ).textContent =
-      stats.diverifikasi || 0;
-
-
-    document.getElementById(
-      'statProses'
-    ).textContent =
-      stats.diproses || 0;
-
-
-    document.getElementById(
-      'statMenunggu'
-    ).textContent =
-      stats.menunggu || 0;
-
-
-    document.getElementById(
-      'statSelesai'
-    ).textContent =
-      stats.selesai || 0;
-
-
-  } catch (error) {
-
-    console.error(
-      'Stats error:',
-      error
-    );
-
-  }
-
-}
 
 
     /* =====================================================
@@ -2392,3 +2359,4 @@
 
 </body>
 </html>
+```
