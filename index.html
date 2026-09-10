@@ -1,1760 +1,1971 @@
 <!DOCTYPE html>
-
 <html lang="id">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-
->
-
-<title>Pengaduan BAZNAS Banyumas</title>
-
-<link
-  rel="preconnect"
-  href="https://fonts.googleapis.com"
->
-
-<link
-  rel="preconnect"
-  href="https://fonts.gstatic.com"
->
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
->
-
-<style>
-
-*{
-  box-sizing:border-box;
-}
-
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#f5f8f6;
-  color:#202624;
-}
-
-.header{
-  background:#259148;
-  color:white;
-  padding:32px 20px;
-}
-
-.wrap{
-  max-width:1120px;
-  margin:auto;
-  padding:0 16px;
-}
-
-.header h1{
-  margin:0;
-  font-size:28px;
-}
-
-.header p{
-  margin:7px 0 0;
-  opacity:.9;
-  font-size:14px;
-}
-
-.nav{
-  display:flex;
-  gap:10px;
-  margin:22px 0;
-}
-
-.nav button{
-  border:1px solid #e0e7e2;
-  background:white;
-  color:#259148;
-  padding:11px 18px;
-  border-radius:9px;
-  font:600 13px Poppins;
-  cursor:pointer;
-}
-
-.nav button.active{
-  background:#259148;
-  color:white;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.card{
-  background:white;
-  border-radius:15px;
-  padding:23px;
-  box-shadow:0 5px 22px rgba(0,0,0,.06);
-}
-
-h2{
-  font-size:20px;
-  margin:0 0 7px;
-}
-
-h3{
-  font-size:16px;
-}
-
-.muted{
-  font-size:12px;
-  color:#777;
-}
-
-label{
-  display:block;
-  font-size:13px;
-  font-weight:600;
-  margin:14px 0 6px;
-}
-
-input,
-select,
-textarea{
-  width:100%;
-  padding:12px 42px 12px 14px;
-  border:1px solid #d9d9d9;
-  border-radius:8px;
-  font-size:14px;
-  background:#fff;
-  color:#222;
-  min-height:44px;
-}
-
-select{
-  appearance:none;
-  -webkit-appearance:none;
-  -moz-appearance:none;
-
-  background-image:
-    linear-gradient(45deg,transparent 50%,#259148 50%),
-    linear-gradient(135deg,#259148 50%,transparent 50%);
-
-  background-position:
-    calc(100% - 18px) 19px,
-    calc(100% - 13px) 19px;
-
-  background-size:
-    5px 5px,
-    5px 5px;
-
-  background-repeat:no-repeat;
-  cursor:pointer;
-}
-
-select:focus,
-input:focus,
-textarea:focus{
-  outline:none;
-  border-color:#259148;
-  box-shadow:0 0 0 3px rgba(37,145,72,.1);
-}
-
-textarea{
-  height:130px;
-  resize:vertical;
-}
-
-.btn{
-  width:100%;
-  height:45px;
-  border:0;
-  border-radius:9px;
-  background:#259148;
-  color:white;
-  font:600 13px Poppins;
-  cursor:pointer;
-  margin-top:18px;
-}
-
-.btn:disabled{
-  opacity:.55;
-  cursor:not-allowed;
-}
-
-.upload{
-  border:1.5px dashed #b9cfc0;
-  border-radius:11px;
-  padding:15px;
-  background:#fafdfb;
-}
-
-.upload input{
-  height:auto;
-  border:0;
-  padding:0;
-}
-
-.upload-info{
-  font-size:11px;
-  color:#777;
-  margin-top:7px;
-}
-
-.msg{
-  display:none;
-  margin-top:14px;
-  padding:13px;
-  border-radius:9px;
-  font-size:12px;
-}
-
-.success{
-  background:#eaf7ee;
-  color:#176b35;
-}
-
-.error{
-  background:#fff0f0;
-  color:#a12b2b;
-}
-
-.ticket{
-  font-size:21px;
-  font-weight:700;
-  margin-top:3px;
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin-bottom:18px;
-}
-
-.stat{
-  background:white;
-  border-radius:11px;
-  padding:13px;
-  text-align:center;
-}
-
-.num{
-  font-size:22px;
-  font-weight:700;
-  color:#259148;
-}
-
-.lab{
-  font-size:10px;
-  color:#777;
-}
-
-.list{
-  max-height:610px;
-  overflow:auto;
-}
-
-.item{
-  border:1px solid #edf0ee;
-  border-radius:10px;
-  padding:14px;
-  margin-bottom:9px;
-}
-
-.item-id{
-  color:#259148;
-  font-size:12px;
-  font-weight:700;
-}
-
-.item-title{
-  font-size:13px;
-  font-weight:600;
-  margin-top:3px;
-}
-
-.meta{
-  font-size:10px;
-  color:#888;
-  margin-top:4px;
-}
-
-.badge{
-  display:inline-block;
-  margin-top:9px;
-  padding:4px 9px;
-  border-radius:20px;
-  font-size:10px;
-  font-weight:600;
-  background:#eee;
-}
-
-.baru{
-  background:#fff3cd;
-  color:#856404;
-}
-
-.diverifikasi{
-  background:#dbeafe;
-  color:#1e40af;
-}
-
-.diproses{
-  background:#fff0c2;
-  color:#8a5a00;
-}
-
-.menunggu-informasi{
-  background:#f3e8ff;
-  color:#6b21a8;
-}
-
-.selesai{
-  background:#dcfce7;
-  color:#166534;
-}
-
-.ditutup{
-  background:#e5e7eb;
-  color:#374151;
-}
-
-.detail{
-  display:none;
-  margin-top:20px;
-  padding-top:18px;
-  border-top:1px solid #eee;
-}
-
-.detail-box{
-  background:#f7faf8;
-  border-radius:10px;
-  padding:14px;
-  font-size:12px;
-}
-
-.timeline{
-  margin-top:18px;
-}
-
-.timeline-item{
-  display:flex;
-  gap:10px;
-  margin-bottom:14px;
-}
-
-.dot{
-  width:11px;
-  height:11px;
-  border-radius:50%;
-  background:#259148;
-  margin-top:5px;
-  flex:0 0 11px;
-}
-
-.timeline-title{
-  font-size:12px;
-  font-weight:600;
-}
-
-.timeline-date{
-  font-size:10px;
-  color:#888;
-}
-
-.hidden{
-  display:none;
-}
-
-.loading{
-  text-align:center;
-  padding:22px;
-  color:#888;
-  font-size:12px;
-}
-
-@media(max-width:800px){
-
-  .grid{
-    grid-template-columns:1fr;
-  }
-
-  .header h1{
-    font-size:23px;
-  }
-
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pengaduan BAZNAS Banyumas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f5f7f6;
+      color: #222;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 18px 50px;
+    }
+
+    /* HEADER */
+    .header {
+      background: #259148;
+      color: white;
+      border-radius: 18px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 25px rgba(37, 145, 72, .15);
+    }
+
+    .header-title {
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .header-subtitle {
+      font-size: 13px;
+      opacity: .9;
+    }
+
+    /* NAV */
+    .nav {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav button {
+      border: 0;
+      background: white;
+      color: #259148;
+      border-radius: 9px;
+      padding: 11px 18px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    }
+
+    .nav button.active {
+      background: #259148;
+      color: white;
+    }
+
+    /* CARD */
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 15px rgba(0,0,0,.05);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .card-desc {
+      color: #777;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    /* FORM */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 2px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 7px;
+      color: #333;
+    }
+
+    label span {
+      color: #e53935;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 9px;
+      padding: 11px 12px;
+      font-size: 12px;
+      outline: none;
+      background: white;
+      transition: .2s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #259148;
+      box-shadow: 0 0 0 3px rgba(37,145,72,.08);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .help-text {
+      color: #888;
+      font-size: 10px;
+      margin-top: 5px;
+      line-height: 1.5;
+    }
+
+    .file-box {
+      border: 1px dashed #bbb;
+      border-radius: 10px;
+      padding: 15px;
+      background: #fafafa;
+    }
+
+    .file-box input {
+      border: 0;
+      padding: 0;
+      background: transparent;
+    }
+
+    /* BUTTON */
+    .btn {
+      border: 0;
+      border-radius: 9px;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: #259148;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #1e783c;
+    }
+
+    .btn-secondary {
+      background: #eee;
+      color: #444;
+    }
+
+    .btn:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+    }
+
+    .form-actions {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    /* CHECK */
+    .check-box {
+      display: flex;
+      gap: 10px;
+    }
+
+    .check-box input {
+      flex: 1;
+    }
+
+    .detail-box {
+      margin-top: 20px;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      overflow: hidden;
+      display: none;
+    }
+
+    .detail-header {
+      background: #259148;
+      color: white;
+      padding: 15px;
+    }
+
+    .detail-id {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .detail-title {
+      font-size: 11px;
+      opacity: .9;
+      margin-top: 3px;
+    }
+
+    .detail-body {
+      padding: 18px;
+    }
+
+    .detail-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 15px;
+      padding: 9px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 12px;
+    }
+
+    .detail-row:last-child {
+      border-bottom: 0;
+    }
+
+    .detail-label {
+      color: #888;
+    }
+
+    .detail-value {
+      font-weight: 500;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 600;
+      background: #eef6f0;
+      color: #259148;
+    }
+
+    /* STATS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(0,0,0,.04);
+    }
+
+    .stat-number {
+      font-size: 23px;
+      font-weight: 700;
+      color: #259148;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: #777;
+      margin-top: 3px;
+    }
+
+    /* PUBLIC LIST */
+    .complaint-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .complaint-item {
+      border: 1px solid #eee;
+      border-radius: 11px;
+      padding: 14px;
+      background: white;
+    }
+
+    .item-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .item-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 7px;
+      font-size: 10px;
+      color: #999;
+    }
+
+    .item-status {
+      color: #259148;
+      font-weight: 600;
+    }
+
+    /* ALERT */
+    .alert {
+      display: none;
+      padding: 12px 14px;
+      border-radius: 9px;
+      margin-bottom: 15px;
+      font-size: 12px;
+    }
+
+    .alert.show {
+      display: block;
+    }
+
+    .alert.error {
+      background: #fff0f0;
+      color: #c62828;
+      border: 1px solid #ffd0d0;
+    }
+
+    .alert.success {
+      background: #eef9f1;
+      color: #257a3e;
+      border: 1px solid #ccebd4;
+    }
+
+    /* LOADING */
+    .loading {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      font-size: 12px;
+    }
+
+    .loading.show {
+      display: block;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 430px;
+      background: white;
+      border-radius: 18px;
+      padding: 30px 24px;
+      text-align: center;
+      box-shadow: 0 15px 50px rgba(0,0,0,.2);
+      animation: popup .2s ease-out;
+    }
+
+    @keyframes popup {
+      from {
+        transform: scale(.9);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .success-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #eaf7ee;
+      color: #259148;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      margin: 0 auto 16px;
+      font-weight: 700;
+    }
+
+    .modal-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .modal-text {
+      font-size: 12px;
+      color: #777;
+      line-height: 1.7;
+    }
+
+    .modal-ticket {
+      background: #f3faf5;
+      border: 1px dashed #259148;
+      color: #259148;
+      border-radius: 10px;
+      padding: 12px;
+      margin: 18px 0;
+    }
+
+    .modal-ticket-label {
+      font-size: 10px;
+      color: #777;
+      margin-bottom: 3px;
+    }
+
+    .modal-ticket-number {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .modal-btn {
+      width: 100%;
+      height: 44px;
+      border: 0;
+      border-radius: 9px;
+      background: #259148;
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      color: #999;
+      font-size: 10px;
+      padding: 10px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        padding: 15px 12px 40px;
+      }
+
+      .header {
+        padding: 20px;
+      }
+
+      .header-title {
+        font-size: 21px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      .check-box {
+        flex-direction: column;
+      }
+
+      .detail-row {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
-<div class="header">
-
-  <div class="wrap">
-
-<h1>
-  Pengaduan BAZNAS Banyumas
-</h1>
-
-<p>
-  Sampaikan pengaduan, kritik,
-  dan masukan Anda.
-</p>
-
-  </div>
-
-</div>
-
-<main class="wrap">
-
-<!-- NAV -->
-
-<div class="nav">
-
-<button
-id="btnForm"
-class="active"
-onclick="showPage('form')"
-
->
-
-
-📝 Buat Pengaduan
-
-
-  </button>
-
-<button
-id="btnCek"
-onclick="showPage('cek')"
-
->
-
-
-🔎 Cek Pengaduan
-
-
-  </button>
-
-</div>
-
-<!-- =====================================================
-     FORM
-====================================================== -->
-
-<section id="pageForm">
-
-<div class="card">
-
-<h2>
-  Form Pengaduan
-</h2>
-
-<div class="muted">
-
-Data pelapor digunakan untuk
-keperluan verifikasi dan tindak lanjut.
-
-</div>
-
-<form id="complaintForm">
-
-<label>
-  Nama Pelapor *
-</label>
-
-<input
-id="nama"
-required
-
->
-
-<label>
-  No. WhatsApp *
-</label>
-
-<input
-id="noWa"
-type="tel"
-required
-
->
-
-<label>
-  Email *
-</label>
-
-<input
-id="email"
-type="email"
-required
-
->
-
-<label>
-  Status Pelapor *
-</label>
-
-<select
-id="statusPelapor"
-required
-
->
-
-<option value="">
-  Pilih
-</option>
-
-<option value="Muzaki">
-  Muzaki
-</option>
-
-<option value="Mustahik">
-  Mustahik
-</option>
-
-<option value="UPZ">
-  UPZ
-</option>
-
-<option value="Amil">
-  Amil
-</option>
-
-<option value="Masyarakat Umum">
-  Masyarakat Umum
-</option>
-
-<option value="Lainnya">
-  Lainnya
-</option>
-
-</select>
-
-<label>
-  Jenis Pengaduan *
-</label>
-
-<select
-id="jenisPengaduan"
-required
-
->
-
-<option value="">
-  Pilih jenis pengaduan
-</option>
-
-<option value="Pengaduan Pelayanan">
-  Pengaduan Pelayanan
-</option>
-
-<option value="Pengaduan Kode Etik">
-  Pengaduan Kode Etik
-</option>
-
-<option value="Aspirasi">
-  Aspirasi
-</option>
-
-</select>
-
-<label>
-  Tanggal Kejadian *
-</label>
-
-<input
-id="tanggalKejadian"
-type="date"
-required
-
->
-
-<label>
-  Uraian / Kronologi *
-</label>
-
-<textarea
-  id="uraian"
-  required
-></textarea>
-
-<label>
-  Bukti Pendukung
-</label>
-
-<div class="upload">
-
-<input
-id="file"
-type="file"
-accept=".jpg,.jpeg,.png,.pdf"
-
->
-
-<div class="upload-info">
-
-JPG, PNG, atau PDF.
-Maksimal 5 MB.
-
-</div>
-
-</div>
-
-<button
-id="submitBtn"
-class="btn"
-type="submit"
-
->
-
-Kirim Pengaduan
-
-</button>
-
-</form>
-
-<!-- SUCCESS -->
-
-<div
-  id="success"
-  class="msg success"
->
-
-  <div>
-    ✅ Pengaduan berhasil dikirim.
-  </div>
-
-  <div>
-    Nomor tiket Anda:
-  </div>
-
-  <div
-    id="ticket"
-    class="ticket"
-  ></div>
-
-  <div style="margin-top:6px">
-
-
-Simpan nomor tiket untuk
-mengecek perkembangan pengaduan.
-
-
-  </div>
-
-</div>
-
-<!-- ERROR -->
-
-<div
-  id="error"
-  class="msg error"
-></div>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     CEK
-====================================================== -->
-
-<section
-  id="pageCek"
-  class="hidden"
->
-
-<div class="grid">
-
-<!-- CEK TIKET -->
-
-<div class="card">
-
-<h2>
-  Cek Status Pengaduan
-</h2>
-
-<div class="muted">
-
-Masukkan nomor tiket pengaduan Anda.
-
-</div>
-
-<label>
-  Nomor Tiket
-</label>
-
-<input
-id="searchId"
-placeholder="BZN-001"
-
->
-
-<button
-class="btn"
-onclick="checkComplaint()"
-
->
-
-Cek Status
-
-</button>
-
-<div
-  id="detail"
-  class="detail"
->
-
-<h3 id="detailTitle"></h3>
-
-<div class="detail-box">
-
-<b>
-  Jenis Pengaduan
-</b>
-
-<div id="detailKategori"></div>
-
-<br>
-
-<b>
-  Status
-</b>
-
-<div id="detailStatus"></div>
-
-<br>
-
-<b>
-  Tindak Lanjut
-</b>
-
-<div id="detailTindakLanjut"></div>
-
-</div>
-
-<div class="timeline">
-
-<h3>
-  Perkembangan
-</h3>
-
-<div id="timeline"></div>
-
-</div>
-
-</div>
-
-<div
-  id="checkError"
-  class="msg error"
-></div>
-
-</div>
-
-<!-- DAFTAR -->
-
-<div>
-
-<div class="stats">
-
-<div class="stat">
-
-<div
-  class="num"
-  id="total"
->
-  -
-</div>
-
-<div class="lab">
-  Total Aduan
-</div>
-
-</div>
-
-<div class="stat">
-
-<div
-  class="num"
-  id="diproses"
->
-  -
-</div>
-
-<div class="lab">
-  Diproses
-</div>
-
-</div>
-
-<div class="stat">
-
-<div
-  class="num"
-  id="selesai"
->
-  -
-</div>
-
-<div class="lab">
-  Selesai
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>
-  Daftar Pengaduan
-</h2>
-
-<div class="muted">
-
-Informasi publik ditampilkan
-tanpa data pribadi pelapor.
-
-</div>
-
-<div
-  id="complaintList"
-  class="list"
->
-
-<div class="loading">
-  Memuat data...
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-</main>
-
-<script>
-
-
-/* =====================================================
-   URL API APPS SCRIPT
-===================================================== */
-
-const API_URL = "/api";
-
-
-/* =====================================================
-   NAV
-===================================================== */
-
-function showPage(page){
-
-  const form =
-    document.getElementById(
-      'pageForm'
-    );
-
-  const cek =
-    document.getElementById(
-      'pageCek'
-    );
-
-  document
-    .getElementById('btnForm')
-    .classList
-    .toggle(
-      'active',
-      page === 'form'
-    );
-
-  document
-    .getElementById('btnCek')
-    .classList
-    .toggle(
-      'active',
-      page === 'cek'
-    );
-
-  form.classList.toggle(
-    'hidden',
-    page !== 'form'
-  );
-
-  cek.classList.toggle(
-    'hidden',
-    page !== 'cek'
-  );
-
-  if(page === 'cek'){
-    loadPublicData();
-  }
-
-}
-
-
-/* =====================================================
-   FILE → BASE64
-===================================================== */
-
-function fileToBase64(file){
-
-  return new Promise(
-    (resolve,reject)=>{
-
-      if(!file){
-
-        resolve(null);
-
-        return;
-
-      }
-
-      if(
-        file.size >
-        5 * 1024 * 1024
-      ){
-
-        reject(
-          new Error(
-            'Ukuran file maksimal 5 MB.'
-          )
-        );
-
-        return;
-
-      }
-
-      const allowedTypes = [
-        'image/jpeg',
-        'image/png',
-        'application/pdf'
-      ];
-
-      if(
-        file.type &&
-        !allowedTypes.includes(
-          file.type
-        )
-      ){
-
-        reject(
-          new Error(
-            'Format file hanya JPG, PNG, atau PDF.'
-          )
-        );
-
-        return;
-
-      }
-
-      const reader =
-        new FileReader();
-
-      reader.onload = () => {
-
-        resolve({
-
-          name:file.name,
-
-          mimeType:file.type,
-
-          size:file.size,
-
-          base64:
-            String(
-              reader.result
-            ).split(',')[1]
-
-        });
-
-      };
-
-      reader.onerror = () => {
-
-        reject(
-          new Error(
-            'File gagal dibaca.'
-          )
-        );
-
-      };
-
-      reader.readAsDataURL(file);
-
-    }
-
-  );
-
-}
-
-
-/* =====================================================
-   SUBMIT
-===================================================== */
-
-document
-  .getElementById(
-    'complaintForm'
-  )
-  .addEventListener(
-    'submit',
-    async function(e){
-
-      e.preventDefault();
-
-      const btn =
-        document.getElementById(
-          'submitBtn'
-        );
-
-      const success =
-        document.getElementById(
-          'success'
-        );
-
-      const error =
-        document.getElementById(
-          'error'
-        );
-
-      success.style.display =
-        'none';
-
-      error.style.display =
-        'none';
-
-      btn.disabled = true;
-
-      btn.textContent =
-        'Mengirim...';
-
-
-      try{
-
-        const selectedFile =
-          document
-            .getElementById(
-              'file'
-            )
-            .files[0];
-
-        const file =
-          await fileToBase64(
-            selectedFile
-          );
-
-
-        const data = {
-
-          action:'submit',
-
-          nama:
-            document
-              .getElementById(
-                'nama'
-              )
-              .value
-              .trim(),
-
-          noWa:
-            document
-              .getElementById(
-                'noWa'
-              )
-              .value
-              .trim(),
-
-          email:
-            document
-              .getElementById(
-                'email'
-              )
-              .value
-              .trim(),
-
-          statusPelapor:
-            document
-              .getElementById(
-                'statusPelapor'
-              )
-              .value,
-
-          jenisPengaduan:
-            document
-              .getElementById(
-                'jenisPengaduan'
-              )
-              .value,
-
-          tanggalKejadian:
-            document
-              .getElementById(
-                'tanggalKejadian'
-              )
-              .value,
-
-          uraian:
-            document
-              .getElementById(
-                'uraian'
-              )
-              .value
-              .trim(),
-
-          file:file
-
-        };
-
-
-        const response =
-          await fetch(
-            API_URL,
-            {
-
-              method:'POST',
-
-              headers:{
-                'Content-Type':
-                  'text/plain;charset=utf-8'
-              },
-
-              body:
-                JSON.stringify(data)
-
-            }
-          );
-
-
-        const result =
-          await response.json();
-
-
-        if(!result.success){
-
-          throw new Error(
-            result.message ||
-            'Pengiriman gagal.'
-          );
-
-        }
-
-
-        document
-          .getElementById(
-            'ticket'
-          )
-          .textContent =
-          result.id;
-
-
-        success.style.display =
-          'block';
-
-
-        document
-          .getElementById(
-            'complaintForm'
-          )
-          .reset();
-
-
-        window.scrollTo({
-
-          top:0,
-
-          behavior:'smooth'
-
-        });
-
-
-      }catch(err){
-
-        error.textContent =
-          err.message ||
-          'Terjadi kesalahan.';
-
-        error.style.display =
-          'block';
-
-      }finally{
-
-        btn.disabled = false;
-
-        btn.textContent =
-          'Kirim Pengaduan';
-
-      }
-
-    }
-  );
-
-
-/* =====================================================
-   GET API
-===================================================== */
-
-async function apiGet(params){
-
-  const url =
-    API_URL +
-    '?' +
-    new URLSearchParams(
-      params
-    ).toString();
-
-  const response =
-    await fetch(
-      url,
-      {
-        method:'GET',
-        cache:'no-store'
-      }
-    );
-
-  return await response.json();
-
-}
-
-
-/* =====================================================
-   CEK PENGADUAN
-===================================================== */
-
-async function checkComplaint(){
-
-  const id =
-    document
-      .getElementById(
-        'searchId'
-      )
-      .value
-      .trim();
-
-  const error =
-    document.getElementById(
-      'checkError'
-    );
-
-  const detail =
-    document.getElementById(
-      'detail'
-    );
-
-
-  error.style.display =
-    'none';
-
-  detail.style.display =
-    'none';
-
-
-  if(!id){
-
-    error.textContent =
-      'Masukkan nomor tiket terlebih dahulu.';
-
-    error.style.display =
-      'block';
-
-    return;
-
-  }
-
-
-  try{
-
-    const result =
-      await apiGet({
-
-        action:'check',
-
-        id:id
-
-      });
-
-
-    if(!result.success){
-
-      throw new Error(
-        result.message
-      );
-
-    }
-
-
-    detail.style.display =
-      'block';
-
-
-    document
-      .getElementById(
-        'detailTitle'
-      )
-      .textContent =
-      result.id;
-
-
-    document
-      .getElementById(
-        'detailKategori'
-      )
-      .textContent =
-      result.jenisPengaduan || '-';
-
-
-    document
-      .getElementById(
-        'detailStatus'
-      )
-      .innerHTML =
-      createStatusBadge(
-        result.status
-      );
-
-
-    document
-      .getElementById(
-        'detailTindakLanjut'
-      )
-      .textContent =
-      result.tindakLanjut ||
-      'Belum ada informasi tindak lanjut.';
-
-
-    createTimeline(result);
-
-
-  }catch(err){
-
-    error.textContent =
-      err.message ||
-      'Gagal mengambil data.';
-
-    error.style.display =
-      'block';
-
-  }
-
-}
-
-
-/* =====================================================
-   TIMELINE
-===================================================== */
-
-function createTimeline(data){
-
-  let html =
-    timelineItem(
-      'Pengaduan diterima',
-      data.timestamp
-    );
-
-
-  if(
-    [
-      'Diverifikasi',
-      'Diproses',
-      'Menunggu Informasi',
-      'Selesai',
-      'Ditutup'
-    ].includes(
-      data.status
-    )
-  ){
-
-    html +=
-      timelineItem(
-        'Pengaduan diverifikasi',
-        data.tanggalVerifikasi
-      );
-
-  }
-
-
-  if(
-    [
-      'Diproses',
-      'Menunggu Informasi',
-      'Selesai',
-      'Ditutup'
-    ].includes(
-      data.status
-    )
-  ){
-
-    html +=
-      timelineItem(
-        'Pengaduan sedang ditindaklanjuti',
-        ''
-      );
-
-  }
-
-
-  if(
-    [
-      'Selesai',
-      'Ditutup'
-    ].includes(
-      data.status
-    )
-  ){
-
-    html +=
-      timelineItem(
-        'Pengaduan selesai',
-        data.tanggalSelesai
-      );
-
-  }
-
-
-  document
-    .getElementById(
-      'timeline'
-    )
-    .innerHTML =
-    html;
-
-}
-
-
-function timelineItem(
-  title,
-  date
-){
-
-  return `
-
-    <div class="timeline-item">
-
-      <div class="dot"></div>
-
-      <div>
-
-        <div class="timeline-title">
-          ${escapeHtml(title)}
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-title">Pengaduan BAZNAS Banyumas</div>
+      <div class="header-subtitle">
+        Sampaikan pengaduan, aspirasi, atau laporan Anda kepada BAZNAS Kabupaten Banyumas.
+      </div>
+    </div>
+
+    <!-- NAV -->
+    <div class="nav">
+      <button
+        id="btnForm"
+        class="active"
+        onclick="showPage('form')">
+        📝 Buat Pengaduan
+      </button>
+
+      <button
+        id="btnCheck"
+        onclick="showPage('check')">
+        🔎 Cek Pengaduan
+      </button>
+    </div>
+
+    <!-- ================= FORM ================= -->
+    <div id="pageForm">
+
+      <div class="card">
+
+        <div class="card-title">
+          Form Pengaduan
         </div>
 
-        <div class="timeline-date">
-          ${escapeHtml(date || '')}
+        <div class="card-desc">
+          Silakan isi data dengan benar agar pengaduan dapat ditindaklanjuti.
+        </div>
+
+        <div id="formAlert" class="alert"></div>
+
+        <form id="complaintForm">
+
+          <div class="form-grid">
+
+            <!-- NAMA -->
+            <div class="form-group">
+              <label>
+                Nama Pelapor <span>*</span>
+              </label>
+
+              <input
+                type="text"
+                id="nama"
+                name="nama"
+                placeholder="Nama lengkap"
+                required>
+            </div>
+
+            <!-- WA -->
+            <div class="form-group">
+              <label>
+                No. WhatsApp <span>*</span>
+              </label>
+
+              <input
+                type="tel"
+                id="noWa"
+                name="noWa"
+                placeholder="08xxxxxxxxxx"
+                required>
+
+              <div class="help-text">
+                Nomor WhatsApp digunakan apabila petugas perlu menghubungi Anda.
+              </div>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="form-group">
+              <label>
+                Email
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="nama@email.com">
+            </div>
+
+            <!-- STATUS PELAPOR -->
+            <div class="form-group">
+              <label>
+                Status Pelapor <span>*</span>
+              </label>
+
+              <select
+                id="statusPelapor"
+                name="statusPelapor"
+                required>
+
+                <option value="">
+                  Pilih status pelapor
+                </option>
+
+                <option value="Muzaki">
+                  Muzaki
+                </option>
+
+                <option value="Mustahik">
+                  Mustahik
+                </option>
+
+                <option value="Amil">
+                  Amil
+                </option>
+
+                <option value="Masyarakat Umum">
+                  Masyarakat Umum
+                </option>
+
+                <option value="Mitra/Lembaga">
+                  Mitra/Lembaga
+                </option>
+
+                <option value="Lainnya">
+                  Lainnya
+                </option>
+
+              </select>
+            </div>
+
+            <!-- JENIS PENGADUAN -->
+            <div class="form-group">
+              <label>
+                Jenis Pengaduan <span>*</span>
+              </label>
+
+              <select
+                id="jenisPengaduan"
+                name="jenisPengaduan"
+                required>
+
+                <option value="">
+                  Pilih jenis pengaduan
+                </option>
+
+                <option value="Pengaduan Pelayanan">
+                  Pengaduan Pelayanan
+                </option>
+
+                <option value="Pengaduan Kode Etik">
+                  Pengaduan Kode Etik
+                </option>
+
+                <option value="Aspirasi">
+                  Aspirasi
+                </option>
+
+              </select>
+            </div>
+
+            <!-- TANGGAL -->
+            <div class="form-group">
+              <label>
+                Tanggal Kejadian
+              </label>
+
+              <input
+                type="date"
+                id="tanggalKejadian"
+                name="tanggalKejadian">
+            </div>
+
+            <!-- URAIAN -->
+            <div class="form-group full">
+              <label>
+                Uraian / Kronologi <span>*</span>
+              </label>
+
+              <textarea
+                id="uraian"
+                name="uraian"
+                placeholder="Tuliskan pengaduan atau kronologi kejadian secara jelas..."
+                required></textarea>
+            </div>
+
+            <!-- BUKTI -->
+            <div class="form-group full">
+
+              <label>
+                Bukti Pendukung
+              </label>
+
+              <div class="file-box">
+
+                <input
+                  type="file"
+                  id="file"
+                  name="file"
+                  accept="image/*,.pdf,.doc,.docx,.xls,.xlsx">
+
+                <div class="help-text">
+                  Maksimal ukuran file 5 MB.
+                  Bukti dapat berupa foto, PDF, dokumen, atau file pendukung lainnya.
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="form-actions">
+
+            <button
+              type="reset"
+              class="btn btn-secondary">
+              Reset
+            </button>
+
+            <button
+              type="submit"
+              id="submitBtn"
+              class="btn btn-primary">
+              Kirim Pengaduan
+            </button>
+
+          </div>
+
+        </form>
+
+        <div
+          id="submitLoading"
+          class="loading">
+          Sedang mengirim pengaduan...
         </div>
 
       </div>
 
     </div>
 
-  `;
 
-}
+    <!-- ================= CHECK ================= -->
+    <div id="pageCheck" style="display:none;">
 
+      <div class="card">
 
-/* =====================================================
-   LOAD PUBLIC DATA
-===================================================== */
+        <div class="card-title">
+          Cek Pengaduan
+        </div>
 
-async function loadPublicData(){
+        <div class="card-desc">
+          Masukkan nomor tiket pengaduan untuk melihat perkembangan laporan.
+        </div>
 
-  try{
+        <div id="checkAlert" class="alert"></div>
 
-    const [
-      statsRes,
-      listRes
-    ] =
-      await Promise.all([
+        <div class="check-box">
 
-        apiGet({
-          action:'stats'
-        }),
+          <input
+            type="text"
+            id="ticketInput"
+            placeholder="Contoh: ADU-20260910-001">
 
-        apiGet({
-          action:'list'
-        })
+          <button
+            class="btn btn-primary"
+            onclick="checkComplaint()">
+            Cek Tiket
+          </button>
 
-      ]);
+        </div>
 
+        <div
+          id="checkLoading"
+          class="loading">
+          Memuat data pengaduan...
+        </div>
 
-    const stats =
-      statsRes.data || {};
+        <!-- DETAIL -->
+        <div
+          id="detailBox"
+          class="detail-box">
 
-
-    document
-      .getElementById(
-        'total'
-      )
-      .textContent =
-      stats.total ?? 0;
-
-
-    document
-      .getElementById(
-        'diproses'
-      )
-      .textContent =
-      stats.diproses ?? 0;
-
-
-    document
-      .getElementById(
-        'selesai'
-      )
-      .textContent =
-      stats.selesai ?? 0;
-
-
-    renderList(
-      listRes.data || []
-    );
-
-
-  }catch(err){
-
-    document
-      .getElementById(
-        'complaintList'
-      )
-      .innerHTML =
-
-      '<div class="msg error" style="display:block">' +
-
-      escapeHtml(
-        err.message ||
-        'Gagal mengambil data.'
-      ) +
-
-      '</div>';
-
-  }
-
-}
-
-
-/* =====================================================
-   RENDER LIST
-===================================================== */
-
-function renderList(data){
-
-  const container =
-    document
-      .getElementById(
-        'complaintList'
-      );
-
-
-  if(!data.length){
-
-    container.innerHTML =
-      '<div class="loading">' +
-      'Belum ada pengaduan.' +
-      '</div>';
-
-    return;
-
-  }
-
-
-  container.innerHTML =
-    data
-      .map(x => `
-
-        <div class="item">
-
-          <div class="item-id">
-
-            ${escapeHtml(x.id)}
-
-          </div>
-
-
-          <div class="item-title">
-
-            ${escapeHtml(
-              x.jenisPengaduan ||
-              'Pengaduan'
-            )}
-
-          </div>
-
-
-          <div class="meta">
-
-            ${escapeHtml(x.tanggal)}
-
-            ·
-
-            ${escapeHtml(
-              x.jenisPengaduan ||
-              '-'
-            )}
-
-          </div>
-
-
-          ${createStatusBadge(x.status)}
-
-
-          ${
-            x.tindakLanjut
-
-            ?
-
-            `
+          <div class="detail-header">
 
             <div
-              style="
-                font-size:11px;
-                margin-top:9px
-              "
-            >
-
-              <b>
-                Tindak lanjut:
-              </b>
-
-              <br>
-
-              ${escapeHtml(
-                x.tindakLanjut
-              )}
-
+              id="detailId"
+              class="detail-id">
+              -
             </div>
 
-            `
+            <div
+              id="detailJenisHeader"
+              class="detail-title">
+              -
+            </div>
 
-            :
+          </div>
 
-            ''
+          <div class="detail-body">
+
+            <div class="detail-row">
+              <div class="detail-label">
+                Nama Pelapor
+              </div>
+
+              <div
+                id="detailNama"
+                class="detail-value">
+                -
+              </div>
+            </div>
+
+            <div class="detail-row">
+              <div class="detail-label">
+                Jenis Pengaduan
+              </div>
+
+              <div
+                id="detailJenis"
+                class="detail-value">
+                -
+              </div>
+            </div>
+
+            <div class="detail-row">
+              <div class="detail-label">
+                Tanggal Kejadian
+              </div>
+
+              <div
+                id="detailTanggal"
+                class="detail-value">
+                -
+              </div>
+            </div>
+
+            <div class="detail-row">
+              <div class="detail-label">
+                Status
+              </div>
+
+              <div
+                id="detailStatus"
+                class="detail-value">
+                -
+              </div>
+            </div>
+
+            <div class="detail-row">
+              <div class="detail-label">
+                Tanggal Verifikasi
+              </div>
+
+              <div
+                id="detailVerifikasi"
+                class="detail-value">
+                -
+              </div>
+            </div>
+
+            <div class="detail-row">
+              <div class="detail-label">
+                Tanggal Selesai
+              </div>
+
+              <div
+                id="detailSelesai"
+                class="detail-value">
+                -
+              </div>
+            </div>
+
+            <div class="detail-row">
+              <div class="detail-label">
+                Tindak Lanjut
+              </div>
+
+              <div
+                id="detailTindakLanjut"
+                class="detail-value">
+                -
+              </div>
+            </div>
+
+            <div class="detail-row">
+              <div class="detail-label">
+                Hasil Penyelesaian
+              </div>
+
+              <div
+                id="detailHasil"
+                class="detail-value">
+                -
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================= PUBLIC INFO ================= -->
+
+    <div class="card">
+
+      <div class="card-title">
+        Statistik Pengaduan
+      </div>
+
+      <div class="card-desc">
+        Informasi statistik pengaduan secara keseluruhan.
+      </div>
+
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <div
+            id="statBaru"
+            class="stat-number">
+            0
+          </div>
+
+          <div class="stat-label">
+            Baru
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div
+            id="statVerifikasi"
+            class="stat-number">
+            0
+          </div>
+
+          <div class="stat-label">
+            Diverifikasi
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div
+            id="statProses"
+            class="stat-number">
+            0
+          </div>
+
+          <div class="stat-label">
+            Diproses
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div
+            id="statMenunggu"
+            class="stat-number">
+            0
+          </div>
+
+          <div class="stat-label">
+            Menunggu Informasi
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div
+            id="statSelesai"
+            class="stat-number">
+            0
+          </div>
+
+          <div class="stat-label">
+            Selesai
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- PUBLIC LIST -->
+    <div class="card">
+
+      <div class="card-title">
+        Pengaduan Terbaru
+      </div>
+
+      <div class="card-desc">
+        Daftar pengaduan yang masuk secara umum.
+      </div>
+
+      <div
+        id="complaintList"
+        class="complaint-list">
+
+        <div class="loading show">
+          Memuat data...
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer">
+      Sistem Pengaduan BAZNAS Kabupaten Banyumas
+      <br>
+      Tim IT & Media BAZNAS Banyumas
+    </div>
+
+  </div>
+
+
+  <!-- ================= SUCCESS MODAL ================= -->
+
+  <div
+    id="successModal"
+    class="modal">
+
+    <div class="modal-box">
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+      <div class="modal-title">
+        Pengaduan Berhasil Dikirim
+      </div>
+
+      <div class="modal-text">
+        Pengaduan Anda telah berhasil diterima oleh BAZNAS Banyumas.
+      </div>
+
+      <div class="modal-ticket">
+
+        <div class="modal-ticket-label">
+          NOMOR TIKET
+        </div>
+
+        <div
+          id="modalTicket"
+          class="modal-ticket-number">
+          -
+        </div>
+
+      </div>
+
+      <div class="modal-text">
+        Simpan nomor tiket ini untuk mengecek perkembangan pengaduan Anda.
+      </div>
+
+      <br>
+
+      <button
+        class="modal-btn"
+        onclick="closeSuccessModal()">
+        Selesai
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    /* =====================================================
+       API
+    ===================================================== */
+
+    const API_URL = "/api";
+
+
+    /* =====================================================
+       HELPER
+    ===================================================== */
+
+    function escapeHtml(value) {
+
+      if (value === null || value === undefined) {
+        return '';
+      }
+
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+
+    }
+
+
+    function showAlert(id, message, type = 'error') {
+
+      const el = document.getElementById(id);
+
+      el.textContent = message;
+
+      el.className = 'alert show ' + type;
+
+    }
+
+
+    function hideAlert(id) {
+
+      const el = document.getElementById(id);
+
+      el.className = 'alert';
+
+      el.textContent = '';
+
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+    ===================================================== */
+
+    function showPage(page) {
+
+      const pageForm = document.getElementById('pageForm');
+      const pageCheck = document.getElementById('pageCheck');
+
+      const btnForm = document.getElementById('btnForm');
+      const btnCheck = document.getElementById('btnCheck');
+
+      if (page === 'form') {
+
+        pageForm.style.display = 'block';
+        pageCheck.style.display = 'none';
+
+        btnForm.classList.add('active');
+        btnCheck.classList.remove('active');
+
+      } else {
+
+        pageForm.style.display = 'none';
+        pageCheck.style.display = 'block';
+
+        btnForm.classList.remove('active');
+        btnCheck.classList.add('active');
+
+      }
+
+    }
+
+
+    /* =====================================================
+       SUCCESS MODAL
+    ===================================================== */
+
+    function showSuccessModal(ticket) {
+
+      document.getElementById('modalTicket').textContent =
+        ticket || '-';
+
+      document.getElementById('successModal')
+        .classList.add('show');
+
+    }
+
+
+    function closeSuccessModal() {
+
+      document.getElementById('successModal')
+        .classList.remove('show');
+
+    }
+
+
+    /* Tutup modal jika klik area luar */
+
+    document.getElementById('successModal')
+      .addEventListener('click', function(e) {
+
+        if (e.target === this) {
+          closeSuccessModal();
+        }
+
+      });
+
+
+    /* =====================================================
+       SUBMIT PENGADUAN
+    ===================================================== */
+
+    document.getElementById('complaintForm')
+      .addEventListener('submit', async function(e) {
+
+        e.preventDefault();
+
+        hideAlert('formAlert');
+
+        const submitBtn =
+          document.getElementById('submitBtn');
+
+        const loading =
+          document.getElementById('submitLoading');
+
+        submitBtn.disabled = true;
+
+        submitBtn.textContent = 'Mengirim...';
+
+        loading.classList.add('show');
+
+
+        try {
+
+          const fileInput =
+            document.getElementById('file');
+
+          let file = null;
+
+
+          /* ================= FILE ================= */
+
+          if (
+            fileInput.files &&
+            fileInput.files.length > 0
+          ) {
+
+            const selectedFile =
+              fileInput.files[0];
+
+
+            /* MAX 5 MB */
+
+            if (
+              selectedFile.size >
+              5 * 1024 * 1024
+            ) {
+
+              throw new Error(
+                'Ukuran file maksimal 5 MB.'
+              );
+
+            }
+
+
+            const base64 =
+              await fileToBase64(selectedFile);
+
+
+            file = {
+
+              name: selectedFile.name,
+
+              type: selectedFile.type,
+
+              data: base64
+
+            };
 
           }
 
 
-        </div>
+          /* ================= DATA ================= */
 
-      `)
-      .join('');
+          const data = {
 
-}
+            action: 'submit',
+
+            nama:
+              document.getElementById('nama')
+                .value
+                .trim(),
+
+            noWa:
+              document.getElementById('noWa')
+                .value
+                .trim(),
+
+            email:
+              document.getElementById('email')
+                .value
+                .trim(),
+
+            statusPelapor:
+              document.getElementById('statusPelapor')
+                .value,
+
+            jenisPengaduan:
+              document.getElementById('jenisPengaduan')
+                .value,
+
+            tanggalKejadian:
+              document.getElementById('tanggalKejadian')
+                .value,
+
+            uraian:
+              document.getElementById('uraian')
+                .value
+                .trim(),
+
+            file: file
+
+          };
 
 
-/* =====================================================
-   STATUS BADGE
-===================================================== */
+          /* ================= VALIDASI ================= */
 
-function createStatusBadge(status){
+          if (!data.nama) {
 
-  const cls =
-    String(status)
-      .toLowerCase()
-      .replace(/\s+/g,'-')
-      .replace(
-        /[^a-z-]/g,
-        ''
+            throw new Error(
+              'Nama pelapor wajib diisi.'
+            );
+
+          }
+
+
+          if (!data.noWa) {
+
+            throw new Error(
+              'Nomor WhatsApp wajib diisi.'
+            );
+
+          }
+
+
+          if (!data.statusPelapor) {
+
+            throw new Error(
+              'Status pelapor wajib dipilih.'
+            );
+
+          }
+
+
+          if (!data.jenisPengaduan) {
+
+            throw new Error(
+              'Jenis pengaduan wajib dipilih.'
+            );
+
+          }
+
+
+          if (!data.uraian) {
+
+            throw new Error(
+              'Uraian / kronologi wajib diisi.'
+            );
+
+          }
+
+
+          /* ================= REQUEST ================= */
+
+          const response =
+            await fetch(API_URL, {
+
+              method: 'POST',
+
+              headers: {
+                'Content-Type':
+                  'application/json'
+              },
+
+              body: JSON.stringify(data)
+
+            });
+
+
+          if (!response.ok) {
+
+            throw new Error(
+              'Server mengembalikan error HTTP ' +
+              response.status
+            );
+
+          }
+
+
+          const result =
+            await response.json();
+
+
+          /* ================= RESPONSE ================= */
+
+          if (!result.success) {
+
+            throw new Error(
+              result.message ||
+              'Pengiriman pengaduan gagal.'
+            );
+
+          }
+
+
+          /* ================= SUKSES ================= */
+
+          const ticket =
+            result.id ||
+            result.ID_Aduan ||
+            result.ticket ||
+            '-';
+
+
+          document
+            .getElementById('complaintForm')
+            .reset();
+
+
+          showSuccessModal(ticket);
+
+
+          /* Refresh data */
+
+          loadStats();
+
+          loadPublicList();
+
+
+        } catch (error) {
+
+          console.error(
+            'Submit error:',
+            error
+          );
+
+
+          showAlert(
+            'formAlert',
+            error.message ||
+            'Terjadi kesalahan saat mengirim pengaduan.',
+            'error'
+          );
+
+
+        } finally {
+
+          submitBtn.disabled = false;
+
+          submitBtn.textContent =
+            'Kirim Pengaduan';
+
+          loading.classList.remove('show');
+
+        }
+
+      });
+
+
+    /* =====================================================
+       FILE TO BASE64
+    ===================================================== */
+
+    function fileToBase64(file) {
+
+      return new Promise(
+        (resolve, reject) => {
+
+          const reader =
+            new FileReader();
+
+          reader.onload = function() {
+
+            const result =
+              reader.result;
+
+            const base64 =
+              result.split(',')[1];
+
+            resolve(base64);
+
+          };
+
+          reader.onerror =
+            reject;
+
+          reader.readAsDataURL(file);
+
+        }
       );
-
-
-  return `
-
-    <span
-      class="badge ${cls}"
-    >
-
-      ${escapeHtml(status)}
-
-    </span>
-
-  `;
-
-}
-
-
-/* =====================================================
-   SECURITY
-===================================================== */
-
-function escapeHtml(text){
-
-  return String(
-    text ?? ''
-  )
-
-  .replace(
-    /&/g,
-    '&amp;'
-  )
-
-  .replace(
-    /</g,
-    '&lt;'
-  )
-
-  .replace(
-    />/g,
-    '&gt;'
-  )
-
-  .replace(
-    /"/g,
-    '&quot;'
-  )
-
-  .replace(
-    /'/g,
-    '&#039;'
-  );
-
-}
-
-
-/* =====================================================
-   AUTO REFRESH
-===================================================== */
-
-setInterval(
-
-  () => {
-
-    const cek =
-      document
-        .getElementById(
-          'pageCek'
-        );
-
-
-    if(
-      !cek.classList.contains(
-        'hidden'
-      )
-    ){
-
-      loadPublicData();
 
     }
 
-  },
 
-  30000
+    /* =====================================================
+       CHECK PENGADUAN
+    ===================================================== */
 
-);
+    async function checkComplaint() {
 
-</script>
+      hideAlert('checkAlert');
+
+      const ticket =
+        document.getElementById('ticketInput')
+          .value
+          .trim();
+
+
+      if (!ticket) {
+
+        showAlert(
+          'checkAlert',
+          'Masukkan nomor tiket pengaduan.'
+        );
+
+        return;
+
+      }
+
+
+      const loading =
+        document.getElementById('checkLoading');
+
+      const detail =
+        document.getElementById('detailBox');
+
+
+      loading.classList.add('show');
+
+      detail.style.display = 'none';
+
+
+      try {
+
+        const url =
+          API_URL +
+          '?action=check&id=' +
+          encodeURIComponent(ticket);
+
+
+        const response =
+          await fetch(url);
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            'Gagal menghubungi server.'
+          );
+
+        }
+
+
+        const result =
+          await response.json();
+
+
+        if (!result.success) {
+
+          throw new Error(
+            result.message ||
+            'Nomor tiket tidak ditemukan.'
+          );
+
+        }
+
+
+        renderDetail(result);
+
+
+      } catch (error) {
+
+        console.error(
+          'Check error:',
+          error
+        );
+
+
+        showAlert(
+          'checkAlert',
+          error.message ||
+          'Data pengaduan tidak ditemukan.',
+          'error'
+        );
+
+
+      } finally {
+
+        loading.classList.remove('show');
+
+      }
+
+    }
+
+
+    /* =====================================================
+       RENDER DETAIL
+    ===================================================== */
+
+    function renderDetail(result) {
+
+      document.getElementById('detailId')
+        .textContent =
+        result.id ||
+        result.ID_Aduan ||
+        '-';
+
+
+      document.getElementById('detailJenisHeader')
+        .textContent =
+        result.jenisPengaduan ||
+        '-';
+
+
+      document.getElementById('detailNama')
+        .textContent =
+        result.nama ||
+        result.namaPelapor ||
+        '-';
+
+
+      document.getElementById('detailJenis')
+        .textContent =
+        result.jenisPengaduan ||
+        '-';
+
+
+      document.getElementById('detailTanggal')
+        .textContent =
+        result.tanggal ||
+        result.tanggalKejadian ||
+        '-';
+
+
+      const status =
+        result.status ||
+        '-';
+
+
+      document.getElementById('detailStatus')
+        .innerHTML =
+        '<span class="status-badge">' +
+        escapeHtml(status) +
+        '</span>';
+
+
+      document.getElementById('detailVerifikasi')
+        .textContent =
+        result.tanggalVerifikasi ||
+        '-';
+
+
+      document.getElementById('detailSelesai')
+        .textContent =
+        result.tanggalSelesai ||
+        '-';
+
+
+      document.getElementById('detailTindakLanjut')
+        .textContent =
+        result.tindakLanjut ||
+        '-';
+
+
+      document.getElementById('detailHasil')
+        .textContent =
+        result.hasilPenyelesaian ||
+        '-';
+
+
+      document.getElementById('detailBox')
+        .style.display = 'block';
+
+    }
+
+
+    /* =====================================================
+       LOAD STATISTICS
+    ===================================================== */
+
+    async function loadStats() {
+
+      try {
+
+        const response =
+          await fetch(
+            API_URL + '?action=stats'
+          );
+
+
+        if (!response.ok) {
+          return;
+        }
+
+
+        const result =
+          await response.json();
+
+
+        if (!result.success) {
+          return;
+        }
+
+
+        const stats =
+          result.stats || result;
+
+
+        document.getElementById('statBaru')
+          .textContent =
+          stats.Baru || 0;
+
+
+        document.getElementById('statVerifikasi')
+          .textContent =
+          stats.Diverifikasi || 0;
+
+
+        document.getElementById('statProses')
+          .textContent =
+          stats.Diproses || 0;
+
+
+        document.getElementById('statMenunggu')
+          .textContent =
+          stats['Menunggu Informasi'] || 0;
+
+
+        document.getElementById('statSelesai')
+          .textContent =
+          stats.Selesai || 0;
+
+
+      } catch (error) {
+
+        console.error(
+          'Stats error:',
+          error
+        );
+
+      }
+
+    }
+
+
+    /* =====================================================
+       LOAD PUBLIC LIST
+    ===================================================== */
+
+    async function loadPublicList() {
+
+      const list =
+        document.getElementById(
+          'complaintList'
+        );
+
+
+      try {
+
+        const response =
+          await fetch(
+            API_URL + '?action=list'
+          );
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            'Gagal memuat data.'
+          );
+
+        }
+
+
+        const result =
+          await response.json();
+
+
+        if (!result.success) {
+
+          throw new Error(
+            result.message ||
+            'Gagal memuat daftar pengaduan.'
+          );
+
+        }
+
+
+        const items =
+          result.data ||
+          result.items ||
+          [];
+
+
+        if (!items.length) {
+
+          list.innerHTML = `
+            <div style="
+              text-align:center;
+              padding:25px;
+              color:#999;
+              font-size:12px;
+            ">
+              Belum ada pengaduan.
+            </div>
+          `;
+
+          return;
+
+        }
+
+
+        list.innerHTML =
+          items.map(function(x) {
+
+            const jenis =
+              x.jenisPengaduan ||
+              x.Jenis_Pengaduan ||
+              '-';
+
+
+            const tanggal =
+              x.tanggal ||
+              x.Tanggal ||
+              x.tanggalKejadian ||
+              '-';
+
+
+            const status =
+              x.status ||
+              x.Status ||
+              '-';
+
+
+            return `
+
+              <div class="complaint-item">
+
+                <div class="item-title">
+                  ${escapeHtml(jenis)}
+                </div>
+
+                <div class="item-meta">
+
+                  <span>
+                    ${escapeHtml(tanggal)}
+                  </span>
+
+                  <span class="item-status">
+                    ${escapeHtml(status)}
+                  </span>
+
+                </div>
+
+              </div>
+
+            `;
+
+          }).join('');
+
+
+      } catch (error) {
+
+        console.error(
+          'List error:',
+          error
+        );
+
+
+        list.innerHTML = `
+          <div style="
+            text-align:center;
+            padding:20px;
+            color:#999;
+            font-size:12px;
+          ">
+            Data belum dapat dimuat.
+          </div>
+        `;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       ENTER UNTUK CEK TIKET
+    ===================================================== */
+
+    document.getElementById('ticketInput')
+      .addEventListener(
+        'keydown',
+        function(e) {
+
+          if (e.key === 'Enter') {
+
+            e.preventDefault();
+
+            checkComplaint();
+
+          }
+
+        }
+      );
+
+
+    /* =====================================================
+       INITIAL LOAD
+    ===================================================== */
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      function() {
+
+        loadStats();
+
+        loadPublicList();
+
+      }
+    );
+
+
+    /* =====================================================
+       AUTO REFRESH 30 DETIK
+    ===================================================== */
+
+    setInterval(
+      function() {
+
+        loadStats();
+
+        loadPublicList();
+
+      },
+      30000
+    );
+
+  </script>
 
 </body>
-
 </html>
