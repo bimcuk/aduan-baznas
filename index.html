@@ -632,20 +632,23 @@ textarea:focus{
 
 
 <label>
-  Email
+  Email *
 </label>
 
 <input
   id="email"
   type="email"
+  required
 >
 
 
 <label>
-  Status Pelapor
+  Status Pelapor *
 </label>
 
-<select id="statusPelapor">
+<select id="statusPelapor"
+        required
+>
 
 <option value="">
   Pilih
@@ -679,12 +682,11 @@ textarea:focus{
 
 
 <label>
-  Kategori *
+  Jenis Pengaduan *
 </label>
 
 <select
-  id="kategori"
-  onchange="loadSubkategori()"
+  id="jenisPengaduan"
   required
 >
 
@@ -693,82 +695,27 @@ textarea:focus{
 </option>
 
 <option>
-  Pelayanan
+  Pengaduan Pelayanan
 </option>
 
 <option>
-  Penyaluran
+  Pengaduan Kode Etik
 </option>
 
 <option>
-  Penghimpunan
-</option>
-
-<option>
-  Program
-</option>
-
-<option>
-  UPZ
-</option>
-
-<option>
-  SDM/Amil
-</option>
-
-<option>
-  Keuangan
-</option>
-
-<option>
-  IT/Digital
-</option>
-
-<option>
-  Lainnya
+  Aspirasi
 </option>
 
 </select>
 
 
 <label>
-  Subkategori
-</label>
-
-<select id="subkategori">
-
-<option value="">
-  Pilih subkategori
-</option>
-
-</select>
-
-
-<label>
-  Unit Terkait
-</label>
-
-<input
-  id="unitTerkait"
->
-
-
-<label>
-  Tanggal Kejadian
+  Tanggal Kejadian *
 </label>
 
 <input
   id="tanggalKejadian"
   type="date"
->
-
-
-<label>
-  Judul Pengaduan *
-</label>
-
-<input
-  id="judul"
   required
 >
 
@@ -895,7 +842,7 @@ textarea:focus{
 
 <input
   id="searchId"
-  placeholder="ADU-20260909-001"
+    placeholder="BZN-001"
 >
 
 
