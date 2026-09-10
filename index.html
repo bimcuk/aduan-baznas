@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="id">
 
 <head>
@@ -6,13 +7,12 @@
 <meta charset="UTF-8">
 
 <meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
 >
 
-<title>
-  Pengaduan BAZNAS Banyumas
-</title>
+<title>Pengaduan BAZNAS Banyumas</title>
 
 <link
   rel="preconnect"
@@ -122,25 +122,25 @@ label{
 
 input,
 select,
-textarea {
-  width: 100%;
-  padding: 12px 42px 12px 14px;
-  border: 1px solid #d9d9d9;
-  border-radius: 8px;
-  font-size: 14px;
-  background: #fff;
-  color: #222;
-  min-height: 44px;
+textarea{
+  width:100%;
+  padding:12px 42px 12px 14px;
+  border:1px solid #d9d9d9;
+  border-radius:8px;
+  font-size:14px;
+  background:#fff;
+  color:#222;
+  min-height:44px;
 }
 
-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+select{
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
 
   background-image:
-    linear-gradient(45deg, transparent 50%, #259148 50%),
-    linear-gradient(135deg, #259148 50%, transparent 50%);
+    linear-gradient(45deg,transparent 50%,#259148 50%),
+    linear-gradient(135deg,#259148 50%,transparent 50%);
 
   background-position:
     calc(100% - 18px) 19px,
@@ -150,252 +150,146 @@ select {
     5px 5px,
     5px 5px;
 
-  background-repeat: no-repeat;
-
-  cursor: pointer;
+  background-repeat:no-repeat;
+  cursor:pointer;
 }
 
 select:focus,
 input:focus,
-textarea:focus {
-  outline: none;
-  border-color: #259148;
-  box-shadow: 0 0 0 3px rgba(37, 145, 72, 0.1);
+textarea:focus{
+  outline:none;
+  border-color:#259148;
+  box-shadow:0 0 0 3px rgba(37,145,72,.1);
 }
 
 textarea{
-
   height:130px;
-
   resize:vertical;
-
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-
-  outline:none;
-
-  border-color:#259148;
-
-  box-shadow:
-    0 0 0 3px
-    rgba(37,145,72,.10);
-
 }
 
 .btn{
-
   width:100%;
-
   height:45px;
-
   border:0;
-
   border-radius:9px;
-
   background:#259148;
-
   color:white;
-
   font:600 13px Poppins;
-
   cursor:pointer;
-
   margin-top:18px;
-
 }
 
 .btn:disabled{
-
   opacity:.55;
-
   cursor:not-allowed;
-
 }
 
 .upload{
-
   border:1.5px dashed #b9cfc0;
-
   border-radius:11px;
-
   padding:15px;
-
   background:#fafdfb;
-
 }
 
 .upload input{
-
   height:auto;
-
   border:0;
-
   padding:0;
-
 }
 
 .upload-info{
-
   font-size:11px;
-
   color:#777;
-
   margin-top:7px;
-
 }
 
 .msg{
-
   display:none;
-
   margin-top:14px;
-
   padding:13px;
-
   border-radius:9px;
-
   font-size:12px;
-
 }
 
 .success{
-
   background:#eaf7ee;
-
   color:#176b35;
-
 }
 
 .error{
-
   background:#fff0f0;
-
   color:#a12b2b;
-
 }
 
 .ticket{
-
   font-size:21px;
-
   font-weight:700;
-
   margin-top:3px;
-
 }
 
 .stats{
-
   display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
+  grid-template-columns:repeat(3,1fr);
   gap:10px;
-
   margin-bottom:18px;
-
 }
 
 .stat{
-
   background:white;
-
   border-radius:11px;
-
   padding:13px;
-
   text-align:center;
-
 }
 
 .num{
-
   font-size:22px;
-
   font-weight:700;
-
   color:#259148;
-
 }
 
 .lab{
-
   font-size:10px;
-
   color:#777;
-
 }
 
 .list{
-
   max-height:610px;
-
   overflow:auto;
-
 }
 
 .item{
-
   border:1px solid #edf0ee;
-
   border-radius:10px;
-
   padding:14px;
-
   margin-bottom:9px;
-
 }
 
 .item-id{
-
   color:#259148;
-
   font-size:12px;
-
   font-weight:700;
-
 }
 
 .item-title{
-
   font-size:13px;
-
   font-weight:600;
-
   margin-top:3px;
-
 }
 
 .meta{
-
   font-size:10px;
-
   color:#888;
-
   margin-top:4px;
-
 }
 
 .badge{
-
   display:inline-block;
-
   margin-top:9px;
-
   padding:4px 9px;
-
   border-radius:20px;
-
   font-size:10px;
-
   font-weight:600;
-
   background:#eee;
-
 }
 
 .baru{
@@ -429,107 +323,67 @@ textarea:focus{
 }
 
 .detail{
-
   display:none;
-
   margin-top:20px;
-
   padding-top:18px;
-
   border-top:1px solid #eee;
-
 }
 
 .detail-box{
-
   background:#f7faf8;
-
   border-radius:10px;
-
   padding:14px;
-
   font-size:12px;
-
 }
 
 .timeline{
-
   margin-top:18px;
-
 }
 
 .timeline-item{
-
   display:flex;
-
   gap:10px;
-
   margin-bottom:14px;
-
 }
 
 .dot{
-
   width:11px;
-
   height:11px;
-
   border-radius:50%;
-
   background:#259148;
-
   margin-top:5px;
-
   flex:0 0 11px;
-
 }
 
 .timeline-title{
-
   font-size:12px;
-
   font-weight:600;
-
 }
 
 .timeline-date{
-
   font-size:10px;
-
   color:#888;
-
 }
 
 .hidden{
-
   display:none;
-
 }
 
 .loading{
-
   text-align:center;
-
   padding:22px;
-
   color:#888;
-
   font-size:12px;
-
 }
 
 @media(max-width:800px){
 
   .grid{
-
     grid-template-columns:1fr;
-
   }
 
   .header h1{
-
     font-size:23px;
-
   }
 
 }
@@ -538,9 +392,7 @@ textarea:focus{
 
 </head>
 
-
 <body>
-
 
 <!-- HEADER -->
 
@@ -548,44 +400,53 @@ textarea:focus{
 
   <div class="wrap">
 
-    <h1>
-      Pengaduan BAZNAS Banyumas
-    </h1>
+```
+<h1>
+  Pengaduan BAZNAS Banyumas
+</h1>
 
-    <p>
-      Sampaikan pengaduan, kritik,
-      dan masukan Anda.
-    </p>
+<p>
+  Sampaikan pengaduan, kritik,
+  dan masukan Anda.
+</p>
+```
 
   </div>
 
 </div>
 
-
 <main class="wrap">
-
 
 <!-- NAV -->
 
 <div class="nav">
 
-  <button
-    id="btnForm"
-    class="active"
-    onclick="showPage('form')"
-  >
-    📝 Buat Pengaduan
+<button
+id="btnForm"
+class="active"
+onclick="showPage('form')"
+
+>
+
+```
+📝 Buat Pengaduan
+```
+
   </button>
 
-  <button
-    id="btnCek"
-    onclick="showPage('cek')"
-  >
-    🔎 Cek Pengaduan
+<button
+id="btnCek"
+onclick="showPage('cek')"
+
+>
+
+```
+🔎 Cek Pengaduan
+```
+
   </button>
 
 </div>
-
 
 <!-- =====================================================
      FORM
@@ -601,124 +462,123 @@ textarea:focus{
 
 <div class="muted">
 
-  Data pelapor digunakan untuk
-  keperluan verifikasi dan tindak lanjut.
+Data pelapor digunakan untuk
+keperluan verifikasi dan tindak lanjut.
 
 </div>
 
-
 <form id="complaintForm">
-
 
 <label>
   Nama Pelapor *
 </label>
 
 <input
-  id="nama"
-  required
->
+id="nama"
+required
 
+>
 
 <label>
   No. WhatsApp *
 </label>
 
 <input
-  id="noWa"
-  type="tel"
-  required
->
+id="noWa"
+type="tel"
+required
 
+>
 
 <label>
   Email *
 </label>
 
 <input
-  id="email"
-  type="email"
-  required
->
+id="email"
+type="email"
+required
 
+>
 
 <label>
   Status Pelapor *
 </label>
 
-<select id="statusPelapor"
-        required
+<select
+id="statusPelapor"
+required
+
 >
 
 <option value="">
   Pilih
 </option>
 
-<option>
+<option value="Muzaki">
   Muzaki
 </option>
 
-<option>
+<option value="Mustahik">
   Mustahik
 </option>
 
-<option>
+<option value="UPZ">
   UPZ
 </option>
 
-<option>
+<option value="Amil">
   Amil
 </option>
 
-<option>
+<option value="Masyarakat Umum">
   Masyarakat Umum
 </option>
 
-<option>
+<option value="Lainnya">
   Lainnya
 </option>
 
 </select>
-
 
 <label>
   Jenis Pengaduan *
 </label>
 
 <select
-  id="jenisPengaduan"
-  required
+id="jenisPengaduan"
+required
+
 >
 
 <option value="">
-  Pilih kategori
+  Pilih jenis pengaduan
 </option>
 
-<option>
+<option value="Pengaduan Pelayanan">
   Pengaduan Pelayanan
 </option>
 
-<option>
+<option value="Pengaduan Kode Etik">
   Pengaduan Kode Etik
 </option>
 
-<option>
+<option value="Aspirasi">
   Aspirasi
 </option>
 
 </select>
-
 
 <label>
   Tanggal Kejadian *
 </label>
 
 <input
-  id="tanggalKejadian"
-  type="date"
-  required
->
+id="tanggalKejadian"
+type="date"
+required
 
+>
 
 <label>
   Uraian / Kronologi *
@@ -729,7 +589,6 @@ textarea:focus{
   required
 ></textarea>
 
-
 <label>
   Bukti Pendukung
 </label>
@@ -737,34 +596,33 @@ textarea:focus{
 <div class="upload">
 
 <input
-  id="file"
-  type="file"
-  accept=".jpg,.jpeg,.png,.pdf"
+id="file"
+type="file"
+accept=".jpg,.jpeg,.png,.pdf"
+
 >
 
 <div class="upload-info">
 
-  JPG, PNG, atau PDF.
-  Maksimal 5 MB.
+JPG, PNG, atau PDF.
+Maksimal 5 MB.
 
 </div>
 
 </div>
-
 
 <button
-  id="submitBtn"
-  class="btn"
-  type="submit"
+id="submitBtn"
+class="btn"
+type="submit"
+
 >
 
-  Kirim Pengaduan
+Kirim Pengaduan
 
 </button>
 
-
 </form>
-
 
 <!-- SUCCESS -->
 
@@ -788,13 +646,14 @@ textarea:focus{
 
   <div style="margin-top:6px">
 
-    Simpan nomor tiket untuk
-    mengecek perkembangan pengaduan.
+```
+Simpan nomor tiket untuk
+mengecek perkembangan pengaduan.
+```
 
   </div>
 
 </div>
-
 
 <!-- ERROR -->
 
@@ -803,11 +662,9 @@ textarea:focus{
   class="msg error"
 ></div>
 
-
 </div>
 
 </section>
-
 
 <!-- =====================================================
      CEK
@@ -820,7 +677,6 @@ textarea:focus{
 
 <div class="grid">
 
-
 <!-- CEK TIKET -->
 
 <div class="card">
@@ -831,30 +687,29 @@ textarea:focus{
 
 <div class="muted">
 
-  Masukkan nomor tiket pengaduan Anda.
+Masukkan nomor tiket pengaduan Anda.
 
 </div>
-
 
 <label>
   Nomor Tiket
 </label>
 
 <input
-  id="searchId"
-    placeholder="BZN-001"
->
+id="searchId"
+placeholder="ADU-20260910-001"
 
+>
 
 <button
-  class="btn"
-  onclick="checkComplaint()"
+class="btn"
+onclick="checkComplaint()"
+
 >
 
-  Cek Status
+Cek Status
 
 </button>
-
 
 <div
   id="detail"
@@ -863,17 +718,15 @@ textarea:focus{
 
 <h3 id="detailTitle"></h3>
 
-
 <div class="detail-box">
 
 <b>
-  Kategori
+  Jenis Pengaduan
 </b>
 
 <div id="detailKategori"></div>
 
 <br>
-
 
 <b>
   Status
@@ -883,7 +736,6 @@ textarea:focus{
 
 <br>
 
-
 <b>
   Tindak Lanjut
 </b>
@@ -891,7 +743,6 @@ textarea:focus{
 <div id="detailTindakLanjut"></div>
 
 </div>
-
 
 <div class="timeline">
 
@@ -903,26 +754,20 @@ textarea:focus{
 
 </div>
 
-
 </div>
-
 
 <div
   id="checkError"
   class="msg error"
 ></div>
 
-
 </div>
-
 
 <!-- DAFTAR -->
 
 <div>
 
-
 <div class="stats">
-
 
 <div class="stat">
 
@@ -939,7 +784,6 @@ textarea:focus{
 
 </div>
 
-
 <div class="stat">
 
 <div
@@ -954,7 +798,6 @@ textarea:focus{
 </div>
 
 </div>
-
 
 <div class="stat">
 
@@ -971,9 +814,7 @@ textarea:focus{
 
 </div>
 
-
 </div>
-
 
 <div class="card">
 
@@ -983,11 +824,10 @@ textarea:focus{
 
 <div class="muted">
 
-  Informasi publik ditampilkan
-  tanpa data pribadi pelapor.
+Informasi publik ditampilkan
+tanpa data pribadi pelapor.
 
 </div>
-
 
 <div
   id="complaintList"
@@ -1000,20 +840,15 @@ textarea:focus{
 
 </div>
 
-
 </div>
 
-
 </div>
-
 
 </div>
 
 </section>
 
-
 </main>
-
 
 <script>
 
@@ -1023,76 +858,6 @@ textarea:focus{
 ===================================================== */
 
 const API_URL = "/api";
-
-
-/* =====================================================
-   SUBKATEGORI
-===================================================== */
-
-const subkategori = {
-
-  'Pelayanan':[
-    'Pelayanan Amil',
-    'Informasi',
-    'Administrasi',
-    'Lainnya'
-  ],
-
-  'Penyaluran':[
-    'Bantuan',
-    'Mustahik',
-    'Distribusi',
-    'Lainnya'
-  ],
-
-  'Penghimpunan':[
-    'Zakat',
-    'Infak/Sedekah',
-    'Muzaki',
-    'Pembayaran',
-    'Lainnya'
-  ],
-
-  'Program':[
-    'Pelaksanaan Program',
-    'Penerima Manfaat',
-    'Kegiatan',
-    'Lainnya'
-  ],
-
-  'UPZ':[
-    'Layanan UPZ',
-    'Administrasi UPZ',
-    'Pelaporan UPZ',
-    'Lainnya'
-  ],
-
-  'SDM/Amil':[
-    'Pelayanan Amil',
-    'Etika',
-    'Kinerja',
-    'Lainnya'
-  ],
-
-  'Keuangan':[
-    'Transaksi',
-    'Pembayaran',
-    'Laporan',
-    'Lainnya'
-  ],
-
-  'IT/Digital':[
-    'Website',
-    'Aplikasi',
-    'Sistem Digital',
-    'Lainnya'
-  ],
-
-  'Lainnya':[
-    'Lainnya'
-  ]
-
-};
 
 
 /* =====================================================
@@ -1138,52 +903,8 @@ function showPage(page){
   );
 
   if(page === 'cek'){
-
     loadPublicData();
-
   }
-
-}
-
-
-/* =====================================================
-   SUBKATEGORI
-===================================================== */
-
-function loadSubkategori(){
-
-  const k =
-    document
-      .getElementById(
-        'kategori'
-      )
-      .value;
-
-  const s =
-    document
-      .getElementById(
-        'subkategori'
-      );
-
-  s.innerHTML =
-    '<option value="">Pilih subkategori</option>';
-
-  (
-    subkategori[k] || []
-  ).forEach(x => {
-
-    const o =
-      document.createElement(
-        'option'
-      );
-
-    o.value = x;
-
-    o.textContent = x;
-
-    s.appendChild(o);
-
-  });
 
 }
 
@@ -1213,6 +934,29 @@ function fileToBase64(file){
         reject(
           new Error(
             'Ukuran file maksimal 5 MB.'
+          )
+        );
+
+        return;
+
+      }
+
+      const allowedTypes = [
+        'image/jpeg',
+        'image/png',
+        'application/pdf'
+      ];
+
+      if(
+        file.type &&
+        !allowedTypes.includes(
+          file.type
+        )
+      ){
+
+        reject(
+          new Error(
+            'Format file hanya JPG, PNG, atau PDF.'
           )
         );
 
@@ -1352,27 +1096,12 @@ document
               )
               .value,
 
-          kategori:
+          jenisPengaduan:
             document
               .getElementById(
-                'kategori'
+                'jenisPengaduan'
               )
               .value,
-
-          subkategori:
-            document
-              .getElementById(
-                'subkategori'
-              )
-              .value,
-
-          unitTerkait:
-            document
-              .getElementById(
-                'unitTerkait'
-              )
-              .value
-              .trim(),
 
           tanggalKejadian:
             document
@@ -1380,14 +1109,6 @@ document
                 'tanggalKejadian'
               )
               .value,
-
-          judul:
-            document
-              .getElementById(
-                'judul'
-              )
-              .value
-              .trim(),
 
           uraian:
             document
@@ -1452,14 +1173,6 @@ document
             'complaintForm'
           )
           .reset();
-
-
-        document
-          .getElementById(
-            'subkategori'
-          )
-          .innerHTML =
-          '<option value="">Pilih subkategori</option>';
 
 
         window.scrollTo({
@@ -1535,16 +1248,14 @@ async function checkComplaint(){
       .trim();
 
   const error =
-    document
-      .getElementById(
-        'checkError'
-      );
+    document.getElementById(
+      'checkError'
+    );
 
   const detail =
-    document
-      .getElementById(
-        'detail'
-      );
+    document.getElementById(
+      'detail'
+    );
 
 
   error.style.display =
@@ -1597,9 +1308,7 @@ async function checkComplaint(){
         'detailTitle'
       )
       .textContent =
-      result.id +
-      ' — ' +
-      result.judul;
+      result.id;
 
 
     document
@@ -1607,7 +1316,7 @@ async function checkComplaint(){
         'detailKategori'
       )
       .textContent =
-      result.kategori;
+      result.jenisPengaduan || '-';
 
 
     document
@@ -1878,7 +1587,10 @@ function renderList(data){
 
           <div class="item-title">
 
-            ${escapeHtml(x.judul)}
+            ${escapeHtml(
+              x.jenisPengaduan ||
+              'Pengaduan'
+            )}
 
           </div>
 
@@ -1886,8 +1598,13 @@ function renderList(data){
           <div class="meta">
 
             ${escapeHtml(x.tanggal)}
+
             ·
-            ${escapeHtml(x.kategori)}
+
+            ${escapeHtml(
+              x.jenisPengaduan ||
+              '-'
+            )}
 
           </div>
 
@@ -2039,7 +1756,6 @@ setInterval(
 );
 
 </script>
-
 
 </body>
 
